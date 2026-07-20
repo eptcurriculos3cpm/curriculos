@@ -1,0 +1,65 @@
+/* Controles compartilhados: alternância de tema e chatbot. */
+.theme-toggle {
+  position: fixed;
+  right: 105px;
+  bottom: 30px;
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 6px 9px;
+  color: #172033;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+  cursor: pointer;
+}
+
+.theme-track {
+  display: inline-flex;
+  align-items: center;
+  width: 32px;
+  height: 18px;
+  padding: 2px;
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.theme-thumb {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform .2s ease;
+}
+
+body.dark-mode {
+  --fundo: #111827;
+  --branco: #1f2937;
+  --texto: #e5e7eb;
+  --texto-suave: #cbd5e1;
+  --linha: #475569;
+  --bg: #111827;
+  --surface: #1f2937;
+  --surface-soft: #263446;
+  --text: #e5e7eb;
+  --muted: #cbd5e1;
+  --line: #475569;
+  color: #e5e7eb;
+  background: #111827;
+}
+
+body.dark-mode .theme-toggle {
+  color: #f8fafc;
+  background: #1f2937;
+  border-color: #475569;
+}
+
+body.dark-mode .theme-track { background: #1565c0; }
+body.dark-mode .theme-thumb { transform: translateX(14px); }
+
+@media (max-width: 600px) {
+  .theme-toggle { right: 88px; bottom: 22px; }
+}

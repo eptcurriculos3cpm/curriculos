@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículo de estudante do 3º CPM">
+  <title>Carregando currículo… | Currículos 3º CPM</title>
+  <link rel="stylesheet" href="curriculo-aluno.css">
+  <link rel="stylesheet" href="widgets.css">
+  <link rel="stylesheet" href="site-chrome.css">
+  <script src="curriculo-aluno.js" defer></script>
+</head>
+<body>
+  <header class="site-chrome">
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&amp;s" alt="">
+        <span>Currículos 3º CPM</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="curriculo.html">Criar Currículo</a>
+        <a class="ativo" href="vercurriculos.html">Ver Currículos</a>
+        <a href="vagas.html">Ver Vagas</a>
+        <a href="certificados.html">Certificados</a>
+        <button id="botao-imprimir" type="button">Salvar como PDF</button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="carregamento" class="mensagem-estado" role="status" aria-live="polite">
+    <h1>Carregando currículo…</h1>
+    <p>Aguarde enquanto preparamos as informações do estudante.</p>
+  </div>
+
+  <main id="pagina-curriculo" class="pagina-a4" hidden>
+    <article id="curriculo" class="curriculo" aria-label="Currículo do estudante">
+      <aside class="painel-lateral" aria-label="Perfil, contato e competências">
+        <img id="foto-aluno" class="foto-aluno" src="" alt="">
+
+        <section id="secao-contato" class="secao-lateral" aria-labelledby="titulo-contato">
+          <h2 id="titulo-contato">Contato</h2>
+          <ul id="lista-contato" class="lista-contato"></ul>
+        </section>
+
+        <section id="secao-competencias" class="secao-lateral" aria-labelledby="titulo-competencias">
+          <h2 id="titulo-competencias">Competências</h2>
+          <ul id="lista-competencias" class="lista-competencias"></ul>
+        </section>
+      </aside>
+
+      <div class="painel-principal">
+        <header class="identificacao">
+          <p id="turma-area" class="turma-area"></p>
+          <h1 id="nome-aluno"></h1>
+          <p id="titulo-profissional" class="titulo-profissional"></p>
+        </header>
+
+        <section id="secao-sobre" class="secao-principal" aria-labelledby="titulo-sobre">
+          <h2 id="titulo-sobre">Sobre</h2>
+          <p id="sobre-aluno"></p>
+        </section>
+
+        <section id="secao-formacao" class="secao-principal" aria-labelledby="titulo-formacao">
+          <h2 id="titulo-formacao">Formação</h2>
+          <ul id="lista-formacoes" class="lista-conteudo"></ul>
+        </section>
+
+        <section id="secao-experiencias" class="secao-principal" aria-labelledby="titulo-experiencias">
+          <h2 id="titulo-experiencias">Experiências</h2>
+          <ul id="lista-experiencias" class="lista-conteudo"></ul>
+        </section>
+
+        <section id="secao-projetos" class="secao-principal" aria-labelledby="titulo-projetos">
+          <h2 id="titulo-projetos">Projetos</h2>
+          <ul id="lista-projetos" class="lista-conteudo"></ul>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <div id="estado-erro" class="mensagem-estado" role="alert" hidden>
+    <h1>Currículo não encontrado</h1>
+    <p id="mensagem-erro">Não foi possível localizar o estudante solicitado.</p>
+    <a href="vercurriculos.html">Voltar para Ver Currículos</a>
+  </div>
+  <footer class="site-footer-standard">
+    <div class="footer-container">
+      <div><h3>Currículos 3º CPM</h3><p>Plataforma para criação de currículos, oportunidades e cursos gratuitos.</p></div>
+      <div class="footer-links"><h3>Links</h3><a href="index.html">Início</a><a href="curriculo.html">Criar Currículo</a><a href="vercurriculos.html">Ver Currículos</a><a href="vagas.html">Vagas</a></div>
+      <div><h3>Contato</h3><p>📧 curriculos3cpm@email.com</p><p>📍 3º CPM</p></div>
+    </div>
+    <hr><p class="copyright">© 2026 Currículos 3º CPM - Todos os direitos reservados.</p>
+  </footer>
+<button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">☀️</span>
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+  <button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+  <script src="chatbot.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

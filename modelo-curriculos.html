@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Vitrine de currículos de estudantes do projeto."
+  >
+  <title>Projeto Currículos | Conheça nossos estudantes</title>
+
+  <style>
+    :root {
+      --bg: #f2f2f0;
+      --surface: #ffffff;
+      --surface-soft: #f8f8f7;
+      --text: #252525;
+      --muted: #686868;
+      --accent: #484444;
+      --accent-hover: #302d2d;
+      --line: #ddddda;
+      --focus: #8b5cf6;
+      --shadow: 0 18px 45px rgba(25, 25, 25, 0.10);
+      --shadow-card: 0 10px 28px rgba(25, 25, 25, 0.09);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: 1180px;
+      --transition: 180ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(72, 68, 68, 0.09), transparent 34rem),
+        var(--bg);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      padding: 26px 0 10px;
+    }
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 14px;
+      color: #ffffff;
+      background: var(--accent);
+      box-shadow: var(--shadow-card);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 1rem;
+    }
+
+    .brand-text span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .header-link {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.62);
+      text-decoration: none;
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+    }
+
+    .header-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: #ffffff;
+    }
+
+    .hero {
+      padding: 46px 0 34px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      padding: clamp(30px, 6vw, 72px);
+      border-radius: var(--radius-lg);
+      color: #ffffff;
+      background:
+        linear-gradient(120deg, rgba(31, 29, 29, 0.98), rgba(72, 68, 68, 0.90)),
+        var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .hero-panel::before {
+      top: -130px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+    }
+
+    .hero-panel::after {
+      right: 210px;
+      bottom: -180px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 32px;
+      height: 2px;
+      content: "";
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: clamp(2.35rem, 7vw, 5.2rem);
+      font-weight: 300;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+    }
+
+    .hero-description {
+      max-width: 670px;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.80);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .button-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+    }
+
+    .button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .students-section {
+      padding: 38px 0 86px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading-copy {
+      max-width: 690px;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .section-description {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .carousel-actions {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 10px;
+    }
+
+    .carousel-button {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--text);
+      background: var(--surface);
+      cursor: pointer;
+      box-shadow: 0 7px 18px rgba(25, 25, 25, 0.06);
+      transition:
+        transform var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+    }
+
+    .carousel-button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    .carousel-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.38;
+    }
+
+    .carousel-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+    }
+
+    .search-box {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: var(--surface-soft);
+      transition:
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .search-box:focus-within {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(72, 68, 68, 0.10);
+    }
+
+    .search-box svg {
+      flex: 0 0 auto;
+      width: 19px;
+      height: 19px;
+      color: var(--muted);
+      fill: currentColor;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 46px;
+      border: 0;
+      outline: 0;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .search-box input::placeholder {
+      color: #8a8a8a;
+    }
+
+    .results-status {
+      flex: 0 0 auto;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .carousel {
+      position: relative;
+    }
+
+    .carousel-track {
+      display: grid;
+      grid-auto-columns: minmax(250px, 31%);
+      grid-auto-flow: column;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 4px 4px 24px;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .student-card {
+      scroll-snap-align: start;
+    }
+
+    .student-link {
+      display: flex;
+      overflow: hidden;
+      height: 100%;
+      min-height: 430px;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      color: var(--text);
+      background: var(--surface);
+      box-shadow: var(--shadow-card);
+      text-decoration: none;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+    }
+
+    .student-link:hover {
+      transform: translateY(-7px);
+      border-color: #c5c3c0;
+      box-shadow: 0 22px 42px rgba(25, 25, 25, 0.14);
+    }
+
+    .student-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #dedddb;
+    }
+
+    .student-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 320ms ease;
+    }
+
+    .student-link:hover .student-photo {
+      transform: scale(1.045);
+    }
+
+    .student-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      max-width: calc(100% - 28px);
+      padding: 7px 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(25, 25, 25, 0.74);
+      backdrop-filter: blur(8px);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .student-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px;
+    }
+
+    .student-name {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 1.42rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+    }
+
+    .student-title {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .student-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .student-meta span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #555555;
+      background: var(--surface-soft);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .student-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 24px;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .student-cta svg {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+      transition: transform var(--transition);
+    }
+
+    .student-link:hover .student-cta svg {
+      transform: translateX(4px);
+    }
+
+    .message {
+      display: none;
+      padding: 34px 22px;
+      border: 1px dashed #c9c6c3;
+      border-radius: var(--radius-md);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.60);
+      text-align: center;
+    }
+
+    .message.is-visible {
+      display: block;
+    }
+
+    .message strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .data-warning {
+      display: none;
+      margin: 16px 0 0;
+      padding: 12px 14px;
+      border-left: 4px solid #b7791f;
+      border-radius: 8px;
+      color: #60420f;
+      background: #fff8e5;
+      font-size: 0.88rem;
+    }
+
+    .data-warning.is-visible {
+      display: block;
+    }
+
+    .site-footer {
+      padding: 28px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.88rem;
+    }
+
+    .footer-content p {
+      margin: 0;
+    }
+
+    .footer-content a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .carousel-track {
+        grid-auto-columns: minmax(260px, 46%);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .site-header {
+        padding-top: 16px;
+      }
+
+      .header-link {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-panel {
+        min-height: 0;
+        border-radius: 22px;
+      }
+
+      .section-heading {
+        align-items: start;
+      }
+
+      .carousel-actions {
+        display: none;
+      }
+
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .results-status {
+        padding-left: 2px;
+        white-space: normal;
+      }
+
+      .carousel-track {
+        grid-auto-columns: minmax(250px, 86%);
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(calc(100% - 22px), var(--container));
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero-panel {
+        padding: 28px 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.15rem, 15vw, 3.4rem);
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .carousel-track {
+        grid-auto-columns: 92%;
+        gap: 14px;
+      }
+
+      .student-link {
+        min-height: 410px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="widgets.css">
+  <link rel="stylesheet" href="site-chrome.css">
+</head>
+
+<body>
+  <header class="site-chrome">
+    <nav aria-label="Navegação principal">
+      <a class="logo" href="index.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&amp;s" alt="">
+        <span>Currículos 3º CPM</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="curriculo.html">Criar Currículo</a>
+        <a class="ativo" href="vercurriculos.html">Ver Currículos</a>
+        <a href="vagas.html">Ver Vagas</a>
+        <a href="certificados.html">Certificados</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <p class="eyebrow">Portfólio de estudantes</p>
+            <h1>Conheça talentos em formação.</h1>
+            <p class="hero-description">
+              Explore os currículos, projetos, competências e experiências dos estudantes
+              participantes desta iniciativa.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#curriculos">
+                Ver currículos
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 16.5 5.5 10l1.4-1.4 5.1 5.1 5.1-5.1 1.4 1.4-6.5 6.5Z"/>
+                </svg>
+              </a>
+
+              <a class="button button-secondary" href="#sobre-projeto">
+                Sobre o projeto
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculos" class="students-section" aria-labelledby="titulo-curriculos">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-copy">
+            <p class="section-kicker">Nossos estudantes</p>
+            <h2 id="titulo-curriculos">Escolha um currículo para visualizar</h2>
+            <p class="section-description">
+              Os cartões abaixo são gerados automaticamente com os dados do arquivo
+              <code>dados/alunos.json</code>.
+            </p>
+          </div>
+
+          <div class="carousel-actions" aria-label="Controles do carrossel">
+            <button
+              id="btn-anterior"
+              class="carousel-button"
+              type="button"
+              aria-label="Mostrar currículos anteriores"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m14.7 6.3-1.4-1.4L6.2 12l7.1 7.1 1.4-1.4L9 12l5.7-5.7Z"/>
+              </svg>
+            </button>
+
+            <button
+              id="btn-proximo"
+              class="carousel-button"
+              type="button"
+              aria-label="Mostrar próximos currículos"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9.3 17.7 1.4 1.4 7.1-7.1-7.1-7.1-1.4 1.4L15 12l-5.7 5.7Z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box" for="busca-aluno">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 19.6-5.2-5.2a7.5 7.5 0 1 0-1.4 1.4l5.2 5.2 1.4-1.4ZM4 10a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/>
+            </svg>
+            <input
+              id="busca-aluno"
+              type="search"
+              placeholder="Buscar por nome, turma ou área..."
+              autocomplete="off"
+            >
+          </label>
+
+          <p id="status-resultados" class="results-status" aria-live="polite">
+            Carregando currículos...
+          </p>
+        </div>
+
+        <div class="carousel">
+          <div
+            id="lista-alunos"
+            class="carousel-track"
+            aria-label="Lista de currículos"
+            tabindex="0"
+          ></div>
+        </div>
+
+        <div id="mensagem-vazia" class="message" role="status">
+          <strong>Nenhum estudante encontrado.</strong>
+          Tente pesquisar usando outro nome, turma ou área de interesse.
+        </div>
+
+        <p id="aviso-dados" class="data-warning">
+          O arquivo <strong>dados/alunos.json</strong> não pôde ser carregado.
+          Dados de demonstração foram exibidos. Para testar o JSON, abra o projeto
+          com o Live Server do VS Code.
+        </p>
+      </div>
+    </section>
+
+    <section id="sobre-projeto" class="students-section" aria-labelledby="titulo-projeto">
+      <div class="container">
+        <div class="section-heading-copy">
+          <p class="section-kicker">Sobre a iniciativa</p>
+          <h2 id="titulo-projeto">Um espaço para apresentar competências e trajetórias</h2>
+          <p class="section-description">
+            Esta página funciona como uma vitrine. Ao selecionar um estudante,
+            o visitante é encaminhado para um único modelo de currículo, preenchido
+            dinamicamente de acordo com o identificador presente na URL.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer-standard">
+    <div class="footer-container">
+      <div><h3>Currículos 3º CPM</h3><p>Plataforma para criação de currículos, oportunidades e cursos gratuitos.</p></div>
+      <div class="footer-links"><h3>Links</h3><a href="index.html">Início</a><a href="curriculo.html">Criar Currículo</a><a href="vercurriculos.html">Ver Currículos</a><a href="vagas.html">Vagas</a></div>
+      <div><h3>Contato</h3><p>📧 curriculos3cpm@email.com</p><p>📍 3º CPM</p></div>
+    </div>
+    <hr><p class="copyright">© 2026 Currículos 3º CPM - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    /*
+      ESTRUTURA ESPERADA EM dados/alunos.json:
+
+      {
+        "alunos": [
+          {
+            "id": "joao-silva",
+            "nome": "João da Silva",
+            "titulo": "Desenvolvedor Web",
+            "turma": "3º ano",
+            "area": "Front-end",
+            "foto": "imagens/alunos/joao-silva.jpg",
+            "ativo": true
+          }
+        ]
+      }
+    */
+
+    const CONFIG = {
+      arquivoDeDados: "./dados/alunos.json",
+      paginaDeCurriculo: "./curriculo.html"
+    };
+
+    const alunosDeDemonstracao = [
+      {
+        id: "ana-lima",
+        nome: "Ana Lima",
+        titulo: "Desenvolvedora Front-end",
+        turma: "3º ano",
+        area: "Interfaces Web",
+        foto: ""
+      },
+      {
+        id: "bruno-santos",
+        nome: "Bruno Santos",
+        titulo: "Desenvolvedor Back-end",
+        turma: "3º ano",
+        area: "APIs e Banco de Dados",
+        foto: ""
+      },
+      {
+        id: "carolina-mendes",
+        nome: "Carolina Mendes",
+        titulo: "Desenvolvedora de Software",
+        turma: "2º ano",
+        area: "Aplicações Web",
+        foto: ""
+      },
+      {
+        id: "diego-rocha",
+        nome: "Diego Rocha",
+        titulo: "Desenvolvedor de Jogos",
+        turma: "2º ano",
+        area: "Game Development",
+        foto: ""
+      }
+    ];
+
+    const elementos = {
+      lista: document.getElementById("lista-alunos"),
+      busca: document.getElementById("busca-aluno"),
+      status: document.getElementById("status-resultados"),
+      mensagemVazia: document.getElementById("mensagem-vazia"),
+      avisoDados: document.getElementById("aviso-dados"),
+      anterior: document.getElementById("btn-anterior"),
+      proximo: document.getElementById("btn-proximo"),
+      ano: document.getElementById("ano-atual")
+    };
+
+    let todosOsAlunos = [];
+
+    function normalizarTexto(texto = "") {
+      return texto
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
+    function escaparHtml(valor = "") {
+      return valor
+        .toString()
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function criarAvatarSvg(nome = "Estudante") {
+      const iniciais = nome
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((parte) => parte[0].toUpperCase())
+        .join("");
+
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+          <defs>
+            <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#625d5d"/>
+              <stop offset="1" stop-color="#302d2d"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="600" fill="url(#fundo)"/>
+          <circle cx="400" cy="238" r="118" fill="rgba(255,255,255,.16)"/>
+          <path d="M184 600c24-155 114-237 216-237s192 82 216 237H184Z" fill="rgba(255,255,255,.16)"/>
+          <text
+            x="400"
+            y="330"
+            text-anchor="middle"
+            fill="#ffffff"
+            font-size="126"
+            font-family="Arial, sans-serif"
+            font-weight="700"
+          >${escaparHtml(iniciais || "CV")}</text>
+        </svg>
+      `;
+
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function obterFoto(aluno) {
+      return aluno.foto && aluno.foto.trim()
+        ? aluno.foto
+        : criarAvatarSvg(aluno.nome);
+    }
+
+    function criarCard(aluno) {
+      const id = escaparHtml(aluno.id);
+      const nome = escaparHtml(aluno.nome || "Nome não informado");
+      const titulo = escaparHtml(aluno.titulo || "Área profissional não informada");
+      const turma = escaparHtml(aluno.turma || "Turma não informada");
+      const area = escaparHtml(aluno.area || "Área não informada");
+      const foto = escaparHtml(obterFoto(aluno));
+      const url = `${CONFIG.paginaDeCurriculo}?id=${encodeURIComponent(aluno.id)}`;
+
+      return `
+        <article class="student-card">
+          <a
+            class="student-link"
+            href="${url}"
+            aria-label="Abrir currículo de ${nome}"
+          >
+            <div class="student-photo-wrap">
+              <img
+                class="student-photo"
+                src="${foto}"
+                alt="Foto de ${nome}"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='${criarAvatarSvg(aluno.nome)}';"
+              >
+              <span class="student-badge">${turma}</span>
+            </div>
+
+            <div class="student-content">
+              <h3 class="student-name">${nome}</h3>
+              <p class="student-title">${titulo}</p>
+
+              <div class="student-meta" aria-label="Informações do estudante">
+                <span>${area}</span>
+              </div>
+
+              <span class="student-cta">
+                Ver currículo
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9.3 17.7 1.4 1.4 7.1-7.1-7.1-7.1-1.4 1.4L15 12l-5.7 5.7Z"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </article>
+      `;
+    }
+
+    function atualizarStatus(quantidade, total) {
+      if (quantidade === total) {
+        elementos.status.textContent =
+          `${total} ${total === 1 ? "currículo disponível" : "currículos disponíveis"}`;
+        return;
+      }
+
+      elementos.status.textContent =
+        `${quantidade} ${quantidade === 1 ? "resultado encontrado" : "resultados encontrados"}`;
+    }
+
+    function renderizarAlunos(alunos) {
+      elementos.lista.innerHTML = alunos.map(criarCard).join("");
+      elementos.mensagemVazia.classList.toggle("is-visible", alunos.length === 0);
+      elementos.lista.hidden = alunos.length === 0;
+      atualizarStatus(alunos.length, todosOsAlunos.length);
+
+      requestAnimationFrame(atualizarBotoesDoCarrossel);
+    }
+
+    function filtrarAlunos() {
+      const termo = normalizarTexto(elementos.busca.value);
+
+      if (!termo) {
+        renderizarAlunos(todosOsAlunos);
+        return;
+      }
+
+      const filtrados = todosOsAlunos.filter((aluno) => {
+        const conteudo = [
+          aluno.nome,
+          aluno.titulo,
+          aluno.turma,
+          aluno.area
+        ]
+          .map(normalizarTexto)
+          .join(" ");
+
+        return conteudo.includes(termo);
+      });
+
+      renderizarAlunos(filtrados);
+    }
+
+    function calcularDeslocamento() {
+      const primeiroCard = elementos.lista.querySelector(".student-card");
+
+      if (!primeiroCard) {
+        return elementos.lista.clientWidth * 0.85;
+      }
+
+      const estilos = getComputedStyle(elementos.lista);
+      const gap = Number.parseFloat(estilos.columnGap || estilos.gap) || 20;
+
+      return primeiroCard.getBoundingClientRect().width + gap;
+    }
+
+    function moverCarrossel(direcao) {
+      elementos.lista.scrollBy({
+        left: calcularDeslocamento() * direcao,
+        behavior: "smooth"
+      });
+    }
+
+    function atualizarBotoesDoCarrossel() {
+      const tolerancia = 4;
+      const maximo = elementos.lista.scrollWidth - elementos.lista.clientWidth;
+
+      elementos.anterior.disabled = elementos.lista.scrollLeft <= tolerancia;
+      elementos.proximo.disabled =
+        maximo <= tolerancia || elementos.lista.scrollLeft >= maximo - tolerancia;
+    }
+
+    function validarAlunos(dados) {
+      const lista = Array.isArray(dados) ? dados : dados?.alunos;
+
+      if (!Array.isArray(lista)) {
+        throw new Error('O JSON deve conter um array chamado "alunos".');
+      }
+
+      return lista.filter((aluno) => {
+        const possuiDadosMinimos =
+          aluno &&
+          typeof aluno.id === "string" &&
+          aluno.id.trim() &&
+          typeof aluno.nome === "string" &&
+          aluno.nome.trim();
+
+        const estaAtivo = aluno.ativo !== false;
+
+        return possuiDadosMinimos && estaAtivo;
+      });
+    }
+
+    async function carregarAlunos() {
+      try {
+        const resposta = await fetch(CONFIG.arquivoDeDados, {
+          cache: "no-store"
+        });
+
+        if (!resposta.ok) {
+          throw new Error(`Erro HTTP ${resposta.status}`);
+        }
+
+        const dados = await resposta.json();
+        todosOsAlunos = validarAlunos(dados);
+      } catch (erro) {
+        console.warn("Não foi possível carregar o JSON:", erro);
+        todosOsAlunos = alunosDeDemonstracao;
+        elementos.avisoDados.classList.add("is-visible");
+      }
+
+      renderizarAlunos(todosOsAlunos);
+    }
+
+    elementos.busca.addEventListener("input", filtrarAlunos);
+    elementos.anterior.addEventListener("click", () => moverCarrossel(-1));
+    elementos.proximo.addEventListener("click", () => moverCarrossel(1));
+    elementos.lista.addEventListener("scroll", atualizarBotoesDoCarrossel, {
+      passive: true
+    });
+    window.addEventListener("resize", atualizarBotoesDoCarrossel);
+
+    elementos.ano.textContent = new Date().getFullYear();
+    carregarAlunos();
+  </script>
+  <button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+    <span class="theme-icon" aria-hidden="true">☀️</span>
+    <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+    <span class="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+  <button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+  <script src="chatbot.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

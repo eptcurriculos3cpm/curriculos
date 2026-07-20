@@ -1,0 +1,102 @@
+/* Cabeçalho e rodapé compartilhados pelas páginas complementares. */
+body {
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Georgia, serif;
+  color: #1b1b1b;
+  background: #fff;
+}
+
+header.site-chrome {
+  position: static;
+  z-index: auto;
+  width: 100%;
+  background: #043175;
+  box-shadow: none;
+}
+
+.site-chrome nav {
+  display: flex;
+  width: auto;
+  max-width: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0;
+  padding: 15px 30px;
+  background: #043175;
+}
+
+.site-chrome .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-chrome .logo img {
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-chrome .menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.site-chrome .menu a,
+.site-chrome .menu button {
+  padding: 10px 15px;
+  color: #fff;
+  background: #1565c0;
+  border: 0;
+  border-radius: 15px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-chrome .menu a:hover,
+.site-chrome .menu a.ativo,
+.site-chrome .menu button:hover { background: #62a294; }
+
+.site-footer-standard {
+  margin-top: 60px;
+  color: #fff;
+  background: #043175;
+}
+
+.site-footer-standard .footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+}
+
+.site-footer-standard .footer-container div { max-width: 300px; }
+.site-footer-standard h3 { margin: 0 0 15px; }
+.site-footer-standard p { margin: 0 0 10px; }
+.site-footer-standard .footer-links { display: flex; flex-direction: column; }
+.site-footer-standard .footer-links a { margin-bottom: 10px; color: #fff; text-decoration: none; }
+.site-footer-standard .footer-links a:hover { color: #62a294; }
+.site-footer-standard hr { height: 1px; margin: 0 40px; border: 0; background: rgba(255,255,255,.3); }
+.site-footer-standard .copyright { margin: 0; padding: 20px; text-align: center; font-size: 14px; }
+
+body.dark-mode { color: #e5e7eb; background: #1c1c1c; }
+body.dark-mode .site-footer-standard { background: #061b42; }
+
+@media (max-width: 760px) {
+  .site-chrome nav { padding: 14px 18px; align-items: flex-start; flex-direction: column; }
+  .site-chrome .menu { justify-content: flex-start; }
+}
