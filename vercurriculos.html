@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículos dos alunos do 3º CPM">
+  <title>Ver Currículos | 3º CPM</title>
+  <link rel="stylesheet" href="widgets.css">
+  <link rel="stylesheet" href="site-chrome.css">
+  <style>
+    :root {
+      --azul-escuro: #043175;
+      --azul: #1565c0;
+      --verde: #62a294;
+      --fundo: #f4f7fb;
+      --texto: #1b1b1b;
+      --texto-suave: #5e6775;
+      --branco: #fff;
+      --sombra: 0 14px 35px rgba(4, 49, 117, .14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--texto);
+      background: var(--fundo);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    header, footer { background: var(--azul-escuro); }
+
+    nav {
+      display: flex;
+      width: min(1180px, 100%);
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 0 auto;
+      padding: 15px 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--branco);
+      font-size: 1.25rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      width: 58px;
+      height: 58px;
+      border: 3px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .menu a {
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: var(--branco);
+      background: var(--azul);
+      font-size: .95rem;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .menu a:hover, .menu a:focus-visible, .menu a.ativo {
+      background: var(--verde);
+      transform: translateY(-2px);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 54px 0 70px;
+    }
+
+    .cabecalho-pagina {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .cabecalho-pagina span {
+      color: var(--azul);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 10px 0 12px;
+      color: var(--azul-escuro);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+    }
+
+    .cabecalho-pagina p {
+      margin: 0;
+      color: var(--texto-suave);
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .carrossel { position: relative; }
+
+    .janela {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: var(--sombra);
+    }
+
+    .trilha {
+      display: flex;
+      transition: transform .45s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      background: var(--branco);
+    }
+
+    .link-curriculo {
+      display: block;
+      min-height: 100%;
+      padding: clamp(22px, 5vw, 48px);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .link-curriculo:hover .nome-aluno,
+    .link-curriculo:focus-visible .nome-aluno { color: var(--verde); }
+
+    .resumo-curriculo {
+      display: grid;
+      grid-template-columns: minmax(180px, 260px) 1fr;
+      gap: clamp(28px, 5vw, 58px);
+      align-items: center;
+    }
+
+    .perfil { text-align: center; }
+
+    .foto-aluno {
+      width: clamp(130px, 18vw, 190px);
+      aspect-ratio: 1;
+      margin: 0 auto 18px;
+      border: 7px solid #e7effa;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--azul), var(--azul-escuro));
+      object-fit: cover;
+    }
+
+    .nome-aluno {
+      margin: 0 0 7px;
+      color: var(--azul-escuro);
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      transition: color .2s;
+    }
+
+    .titulo-aluno {
+      margin: 0;
+      color: var(--verde);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+
+    .detalhes { font-family: Arial, sans-serif; }
+
+    .sobre {
+      margin: 0 0 24px;
+      color: var(--texto-suave);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .grade-informacoes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .bloco h3 {
+      margin: 0 0 9px;
+      color: var(--azul-escuro);
+      font-family: Georgia, serif;
+      font-size: 1.06rem;
+    }
+
+    .bloco p {
+      margin: 0;
+      color: var(--texto-suave);
+      font-size: .94rem;
+      line-height: 1.55;
+    }
+
+    .habilidades {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .habilidades span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--azul-escuro);
+      background: #eaf1fb;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .chamada-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: var(--azul);
+      font-weight: 700;
+    }
+
+    .controle {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--branco);
+      background: var(--azul-escuro);
+      box-shadow: 0 6px 18px rgba(4,49,117,.25);
+      font-size: 1.6rem;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .controle:hover, .controle:focus-visible { background: var(--verde); }
+    .controle:disabled { cursor: not-allowed; opacity: .4; }
+    .anterior { left: -23px; }
+    .proximo { right: -23px; }
+
+    .indicadores {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .indicador {
+      width: 11px;
+      height: 11px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #b8c4d5;
+      cursor: pointer;
+      transition: width .2s, background .2s;
+    }
+
+    .indicador.ativo {
+      width: 30px;
+      border-radius: 99px;
+      background: var(--verde);
+    }
+
+    .estado {
+      padding: 55px 25px;
+      border-radius: 24px;
+      color: var(--texto-suave);
+      background: var(--branco);
+      box-shadow: var(--sombra);
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .estado strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--azul-escuro);
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+    }
+
+    footer {
+      padding: 26px 20px;
+      color: var(--branco);
+      font-family: Arial, sans-serif;
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid #ffbf47; outline-offset: 4px; }
+
+    @media (max-width: 850px) {
+      nav { flex-direction: column; }
+      .menu { justify-content: center; }
+      .resumo-curriculo { grid-template-columns: 1fr; }
+      .perfil {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 20px;
+        align-items: center;
+        text-align: left;
+      }
+      .foto-aluno {
+        grid-row: 1 / 3;
+        width: 130px;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav { padding: 14px 16px; }
+      .logo { font-size: 1.05rem; }
+      .logo img { width: 48px; height: 48px; }
+      .menu {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .menu a { text-align: center; }
+      main { width: min(100% - 22px, 1120px); padding-top: 36px; }
+      .link-curriculo { padding: 24px 20px 30px; }
+      .perfil { display: block; text-align: center; }
+      .foto-aluno { width: 120px; margin: 0 auto 16px; }
+      .grade-informacoes { grid-template-columns: 1fr; }
+      .controle {
+        top: auto;
+        bottom: -68px;
+        width: 42px;
+        height: 42px;
+        transform: none;
+      }
+      .anterior { left: calc(50% - 62px); }
+      .proximo { right: calc(50% - 62px); }
+      .indicadores { margin: 28px 0 58px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+  <script src="vercurriculos.js" defer></script>
+</head>
+<body>
+  <header class="site-chrome">
+    <nav aria-label="Navegação principal">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&amp;s" alt="Logo do 3º CPM">
+        <span>Currículos 3º CPM</span>
+      </div>
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="curriculo.html">Criar Currículo</a>
+        <a class="ativo" href="vercurriculos.html" aria-current="page">Ver Currículos</a>
+        <a href="vagas.html">Ver Vagas</a>
+        <a href="certificados.html">Certificados</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cabecalho-pagina">
+      <span>Talentos do 3º CPM</span>
+      <h1>Currículos dos alunos</h1>
+      <p>Selecione um estudante para conhecer sua formação, competências e projetos.</p>
+    </section>
+
+    <div id="estado-carregamento" class="estado" role="status" aria-live="polite">
+      <strong>Carregando currículos…</strong>
+      Aguarde enquanto buscamos os dados dos estudantes.
+    </div>
+
+    <div id="estado-erro" class="estado" role="alert" hidden>
+      <strong>Não foi possível carregar os currículos.</strong>
+      Abra o projeto com o Live Server e tente novamente.
+    </div>
+
+    <section id="carrossel" class="carrossel" aria-roledescription="carrossel" aria-label="Currículos dos alunos" hidden>
+      <div class="janela">
+        <div id="trilha" class="trilha"></div>
+      </div>
+      <button id="anterior" class="controle anterior" type="button" aria-label="Ver currículo anterior">&#8249;</button>
+      <button id="proximo" class="controle proximo" type="button" aria-label="Ver próximo currículo">&#8250;</button>
+      <div id="indicadores" class="indicadores" aria-label="Selecionar estudante"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer-standard">
+    <div class="footer-container">
+      <div><h3>Currículos 3º CPM</h3><p>Plataforma para criação de currículos, oportunidades e cursos gratuitos.</p></div>
+      <div class="footer-links"><h3>Links</h3><a href="index.html">Início</a><a href="curriculo.html">Criar Currículo</a><a href="vercurriculos.html">Ver Currículos</a><a href="vagas.html">Vagas</a></div>
+      <div><h3>Contato</h3><p>📧 curriculos3cpm@email.com</p><p>📍 3º CPM</p></div>
+    </div>
+    <hr><p class="copyright">© 2026 Currículos 3º CPM - Todos os direitos reservados.</p>
+  </footer>
+<button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">☀️</span>
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+<button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+<script src="chatbot.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

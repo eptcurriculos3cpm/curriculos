@@ -1,0 +1,656 @@
+body{
+  margin:0;
+  font-family: Georgia, serif;
+  background:#ffffff;
+  color:#1b1b1b;
+  transition: background-color .3s, color .3s;
+}
+
+header {
+  width: 100%;
+}
+
+/* nav ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#043175;
+  padding:15px 30px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo img{
+  width:60px;
+  height:60px;
+  border-radius:100%;
+}
+
+.logo p{
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  background:#1565c0;
+  padding:10px 15px;
+  border-radius:15px;
+}
+
+.menu a:hover{
+  background:#62a294;
+}
+
+.menu a.ativo{
+  background-color: #62a294;
+  font-weight: bold;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#043175;
+  padding:15px 30px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo img{
+  width:60px;
+  height:60px;
+  border-radius:100%;
+}
+
+.logo p{
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  background:#1565c0;
+  padding:10px 15px;
+  border-radius:15px;
+}
+
+.menu a:hover{
+  background:#62a294;
+}
+
+.menu a.ativo{
+  background-color: #62a294;
+  font-weight: bold;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* BANNER */
+.banner{
+  height:500px;
+  background-image:url("https://www.folhadelondrina.com.br/img/Artigo-Destaque/3160000/Cornelio-Procopio-se-consolida-como-polo-regional-0316522800202202150851.jpg?xid=5674750");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  padding-left:80px;
+}
+
+.apresentacao{
+  background:rgba(255, 255, 255, 0.723);
+  padding:30px;
+  border-radius:15px;
+  width:400px;
+}
+
+button{
+  background:#043175;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* SEÇÕES */
+section{
+  padding:40px;
+}
+
+.novidades article{
+  background:white;
+  padding:20px;
+  margin:15px;
+  border-radius:15px;
+}
+
+.curriculo{
+  background:white;
+  width: min(860px, calc(100% - 40px));
+  margin: 40px auto;
+  padding: 40px;
+  border-radius:16px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 28px rgba(4, 49, 117, .12);
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.curriculo h1{
+  margin: 0;
+}
+
+.curriculo form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.curriculo label{
+  margin: 0 0 8px;
+  color: #252525;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.curriculo input,
+.curriculo textarea{
+  width: 100%;
+  padding: 13px 14px;
+  margin: 0 0 20px;
+  border: 1px solid #b8c1cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font: inherit;
+  color: #1b1b1b;
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.curriculo textarea{
+  min-height: 150px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.curriculo input:focus,
+.curriculo textarea:focus{
+  outline: none;
+  border-color: #1565c0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, .15);
+}
+
+.curriculo input::placeholder,
+.curriculo textarea::placeholder{
+  color: #717985;
+}
+
+.curriculo button[type="submit"]{
+  align-self: flex-start;
+  min-width: 190px;
+  margin-top: 4px;
+  padding: 13px 24px;
+  font: inherit;
+  font-weight: 600;
+}
+
+input, textarea{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  min-width: 100px;
+}
+
+@media (max-width: 600px){
+  .curriculo{
+    width: calc(100% - 24px);
+    margin: 24px auto;
+    padding: 24px 18px;
+  }
+
+  .curriculo h1{
+    font-size: 32px;
+  }
+
+  .curriculo button[type="submit"]{
+    width: 100%;
+  }
+}
+
+.vagas{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  width:300px;
+}
+
+.certificados{
+  background:#043175;
+  color:white;
+}
+
+.cert{
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:15px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* CHATBOT */
+.chatbot{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #043175;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* ================= FOOTER ================= */
+footer{
+  background-color: #043175;
+  color: white;
+  margin-top: 60px;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 40px;
+}
+
+.footer-container div{
+  max-width: 300px;
+}
+
+.footer-container h3{
+  margin-bottom: 15px;
+}
+
+.footer-links{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a{
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.footer-links a:hover{
+  color: #62a294;
+}
+
+footer hr{
+  border: none;
+  height: 1px;
+  background-color: rgba(255,255,255,.3);
+  margin: 0 40px;
+}
+
+.copyright{
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  font-size: 14px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~CARDS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.card{
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  transition: .3s;
+}
+
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.card h3{
+  color:#043175;
+}
+
+.card p{
+  color:#555;
+  line-height:1.5;
+}
+
+.card a{
+  display:inline-block;
+  margin-top:15px;
+  text-decoration:none;
+  background:#043175;
+  color:white;
+  padding:10px 20px;
+  border-radius:10px;
+}
+
+.card a:hover{
+  background:#1565c0;
+}
+
+/* BOTÕES */
+button{
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+/* títulos */
+h1{
+  color:#043175;
+  font-size:42px;
+}
+
+h2{
+  color:#043175;
+  margin-bottom:25px;
+}
+
+/* NOVIDADES*/
+.noticia{
+  background: white;
+  border-left: 6px solid #043175;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transition: .3s;
+}
+
+.noticia:hover{
+  transform: translateY(-5px);
+}
+
+/* dicas e cursos*/
+.cards{
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* MODO CLARO / ESCURO */
+.theme-toggle{
+  position: fixed;
+  right: 105px;
+  bottom: 36px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #043175;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.theme-toggle:hover{
+  transform: translateY(-3px);
+}
+
+.theme-icon{
+  font-size: 16px;
+  line-height: 1;
+}
+
+.theme-track{
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  background: #c3c3c3;
+  position: relative;
+  display: block;
+}
+
+.theme-thumb{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left .3s, background-color .3s;
+}
+
+body.dark-mode{
+  background: #212121;
+  color: #f5f5f5;
+}
+
+body.dark-mode nav,
+body.dark-mode footer,
+body.dark-mode .certificados{
+  background: #111827;
+}
+
+body.dark-mode .apresentacao,
+body.dark-mode .novidades article,
+body.dark-mode .curriculo,
+body.dark-mode .card,
+body.dark-mode .cert,
+body.dark-mode .noticia{
+  background: #2b2b2b;
+  color: #f5f5f5;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .card h3,
+body.dark-mode .card p,
+body.dark-mode .noticia p{
+  color: #f5f5f5;
+}
+
+body.dark-mode input,
+body.dark-mode textarea{
+  background: #1f2937;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-mode .curriculo label{
+  color: #f5f5f5;
+}
+
+body.dark-mode .curriculo input::placeholder,
+body.dark-mode .curriculo textarea::placeholder{
+  color: #aeb7c4;
+}
+
+body.dark-mode .menu a,
+body.dark-mode button,
+body.dark-mode .card a{
+  background: #374151;
+}
+
+body.dark-mode .menu a:hover,
+body.dark-mode .menu a.ativo,
+body.dark-mode .card a:hover{
+  background: #62a294;
+}
+
+body.dark-mode .theme-toggle{
+  background: #f5f5f5;
+  color: #111827;
+}
+
+body.dark-mode .theme-track{
+  background: #4d4d4d;
+}
+
+body.dark-mode .theme-thumb{
+  left: 22px;
+  background: #111827;
+}
+
+body.dark-mode #cb-panel{
+  background: #F3ECD9;
+  color: #1B2A3D;
+}
+
+body.dark-mode #cb-panel .cb-msg.bot{
+  background: #E8DFC6;
+  color: #1B2A3D;
+}
+
+body.dark-mode #cb-panel .cb-msg.user{
+  background: #16223A;
+  color: #F3ECD9;
+}
+
+body.dark-mode #cb-panel .cb-quick-replies button{
+  background: #fff;
+  color: #1B2A3D;
+  border-color: #cabf9e;
+}
+
+body.dark-mode #cb-panel .cb-quick-replies button:hover{
+  background: #043175;
+  color: #fff;
+  border-color: #043175;
+}
+
+body.dark-mode #cb-panel input{
+  background: #fff;
+  color: #1B2A3D;
+  border-color: #cabf9e;
+}
+
+body.dark-mode #cb-panel #cb-send{
+  background: #16223A;
+  color: #fff;
+}
+
+/* ================= TELA DE LOGIN ================= */
+.auth-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.auth-texto {
+  max-width: 450px;
+}
+
+.auth-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.auth-tab {
+  flex: 1;
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-tab.ativo {
+  background: #043175;
+  color: white;
+}
+
+.auth-form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form.ativo {
+  display: flex;
+}
+
+.auth-msg {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #1565c0;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Ajuste no modo escuro para o login */
+body.dark-mode .auth-card {
+  background: #2b2b2b;
+}
+body.dark-mode .auth-tab {
+  background: #374151;
+  color: #fff;
+}
+body.dark-mode .auth-tab.ativo {
+  background: #62a294;
+}

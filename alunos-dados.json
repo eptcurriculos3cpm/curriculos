@@ -1,0 +1,213 @@
+{
+  "alunos": [
+    {
+      "id": "ana-lima",
+      "ativo": true,
+      "nome": "Ana Lima",
+      "titulo": "Desenvolvedora Front-end",
+      "turma": "3º ano",
+      "area": "Interfaces Web",
+      "foto": "imagens/alunos/ana-lima.jpg",
+      "contato": {
+        "email": "ana.lima@exemplo.com",
+        "cidade": "Londrina, Paraná",
+        "linkedin": "https://www.linkedin.com/in/ana-lima-exemplo",
+        "github": "https://github.com/ana-lima-exemplo"
+      },
+      "sobre": "Estudante de Desenvolvimento de Sistemas interessada em interfaces acessíveis, responsivas e centradas na experiência do usuário.",
+      "competencias": [
+        {
+          "nome": "HTML e CSS",
+          "nivel": "Avançado"
+        },
+        {
+          "nome": "JavaScript",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "Git e GitHub",
+          "nivel": "Intermediário"
+        }
+      ],
+      "formacao": [
+        {
+          "curso": "Técnico em Desenvolvimento de Sistemas",
+          "instituicao": "Instituição de Ensino Exemplo",
+          "periodo": "2024 — 2026"
+        }
+      ],
+      "experiencias": [
+        {
+          "cargo": "Desenvolvedora Front-end",
+          "periodo": "fev. 2026 — atual",
+          "empresa": "Projeto acadêmico",
+          "descricao": "Desenvolvimento de páginas responsivas para projetos escolares.",
+          "atividades": [
+            "Criação de interfaces com HTML e CSS.",
+            "Implementação de interações com JavaScript."
+          ],
+          "tecnologias": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ]
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "Portfólio pessoal",
+          "descricao": "Página responsiva para reunir projetos, competências e formas de contato profissional.",
+          "url": "https://exemplo.com/portfolio-ana"
+        }
+      ]
+    },
+    {
+      "id": "bruno-santos",
+      "ativo": true,
+      "nome": "Bruno Santos",
+      "titulo": "Desenvolvedor Back-end",
+      "turma": "3º ano",
+      "area": "APIs e Banco de Dados",
+      "foto": "imagens/alunos/bruno-santos.jpg",
+      "contato": {
+        "email": "bruno.santos@exemplo.com",
+        "cidade": "Cornélio Procópio, Paraná",
+        "github": "https://github.com/bruno-santos-exemplo"
+      },
+      "sobre": "Estudante interessado em desenvolvimento de APIs, organização de dados e automação de tarefas.",
+      "competencias": [
+        {
+          "nome": "Python",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "SQL",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "Git e GitHub",
+          "nivel": "Intermediário"
+        }
+      ],
+      "formacao": [
+        {
+          "curso": "Técnico em Desenvolvimento de Sistemas",
+          "instituicao": "Instituição de Ensino Exemplo",
+          "periodo": "2024 — 2026"
+        }
+      ],
+      "experiencias": [],
+      "projetos": [
+        {
+          "nome": "Sistema de tarefas",
+          "descricao": "Aplicação para cadastrar, organizar e acompanhar atividades.",
+          "url": "https://exemplo.com/tarefas-bruno"
+        }
+      ]
+    },
+    {
+      "id": "carolina-mendes",
+      "ativo": true,
+      "nome": "Carolina Mendes",
+      "titulo": "Desenvolvedora de Software",
+      "turma": "2º ano",
+      "area": "Aplicações Web",
+      "foto": "imagens/alunos/carolina-mendes.jpg",
+      "contato": {
+        "email": "carolina.mendes@exemplo.com",
+        "cidade": "Bandeirantes, Paraná",
+        "linkedin": "https://www.linkedin.com/in/carolina-mendes-exemplo"
+      },
+      "sobre": "Estudante com interesse em desenvolvimento web, prototipação e criação de soluções digitais para problemas reais.",
+      "competencias": [
+        {
+          "nome": "HTML e CSS",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "JavaScript",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "Figma",
+          "nivel": "Básico"
+        }
+      ],
+      "formacao": [
+        {
+          "curso": "Técnico em Desenvolvimento de Sistemas",
+          "instituicao": "Instituição de Ensino Exemplo",
+          "periodo": "2025 — 2027"
+        },
+        {
+          "curso": "Curso de Introdução ao Design de Interfaces",
+          "instituicao": "Plataforma de Cursos Exemplo",
+          "periodo": "2026"
+        }
+      ],
+      "experiencias": [
+        {
+          "cargo": "Integrante de projeto escolar",
+          "periodo": "mar. 2026 — jun. 2026",
+          "empresa": "Equipe de Desenvolvimento Web",
+          "descricao": "Participação no planejamento e desenvolvimento de uma aplicação escolar.",
+          "atividades": [
+            "Construção de protótipos.",
+            "Criação de páginas responsivas.",
+            "Testes de usabilidade."
+          ],
+          "tecnologias": [
+            "Figma",
+            "HTML",
+            "CSS"
+          ]
+        }
+      ],
+      "projetos": []
+    },
+    {
+      "id": "diego-rocha",
+      "ativo": true,
+      "nome": "Diego Rocha",
+      "titulo": "Desenvolvedor de Jogos",
+      "turma": "2º ano",
+      "area": "Game Development",
+      "foto": "",
+      "contato": {
+        "email": "diego.rocha@exemplo.com",
+        "cidade": "Cambará, Paraná",
+        "github": "https://github.com/diego-rocha-exemplo"
+      },
+      "sobre": "Estudante interessado em lógica de programação, criação de jogos e desenvolvimento de experiências interativas.",
+      "competencias": [
+        {
+          "nome": "Lógica de programação",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "GameMaker",
+          "nivel": "Intermediário"
+        },
+        {
+          "nome": "JavaScript",
+          "nivel": "Básico"
+        }
+      ],
+      "formacao": [
+        {
+          "curso": "Técnico em Desenvolvimento de Sistemas",
+          "instituicao": "Instituição de Ensino Exemplo",
+          "periodo": "2025 — 2027"
+        }
+      ],
+      "experiencias": [],
+      "projetos": [
+        {
+          "nome": "Jogo de plataforma",
+          "descricao": "Protótipo de jogo desenvolvido em ambiente educacional.",
+          "url": "https://exemplo.com/jogo-diego"
+        }
+      ]
+    }
+  ]
+}
