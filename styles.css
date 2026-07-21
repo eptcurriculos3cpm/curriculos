@@ -260,6 +260,9 @@ input, textarea{
 .certificados{
   background:#043175;
   color:white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .cert{
@@ -351,6 +354,7 @@ footer hr{
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0,0,0,.1);
   transition: .3s;
+  gap: 15px;
 }
 
 .card:hover{

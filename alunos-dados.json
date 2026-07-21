@@ -1,213 +1,292 @@
 {
   "alunos": [
-    {
-      "id": "ana-lima",
-      "ativo": true,
-      "nome": "Ana Lima",
-      "titulo": "Desenvolvedora Front-end",
-      "turma": "3º ano",
-      "area": "Interfaces Web",
-      "foto": "imagens/alunos/ana-lima.jpg",
-      "contato": {
-        "email": "ana.lima@exemplo.com",
-        "cidade": "Londrina, Paraná",
-        "linkedin": "https://www.linkedin.com/in/ana-lima-exemplo",
-        "github": "https://github.com/ana-lima-exemplo"
-      },
-      "sobre": "Estudante de Desenvolvimento de Sistemas interessada em interfaces acessíveis, responsivas e centradas na experiência do usuário.",
-      "competencias": [
-        {
-          "nome": "HTML e CSS",
-          "nivel": "Avançado"
-        },
-        {
-          "nome": "JavaScript",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "Git e GitHub",
-          "nivel": "Intermediário"
-        }
-      ],
-      "formacao": [
-        {
-          "curso": "Técnico em Desenvolvimento de Sistemas",
-          "instituicao": "Instituição de Ensino Exemplo",
-          "periodo": "2024 — 2026"
-        }
-      ],
-      "experiencias": [
-        {
-          "cargo": "Desenvolvedora Front-end",
-          "periodo": "fev. 2026 — atual",
-          "empresa": "Projeto acadêmico",
-          "descricao": "Desenvolvimento de páginas responsivas para projetos escolares.",
-          "atividades": [
-            "Criação de interfaces com HTML e CSS.",
-            "Implementação de interações com JavaScript."
-          ],
-          "tecnologias": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-          ]
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "Portfólio pessoal",
-          "descricao": "Página responsiva para reunir projetos, competências e formas de contato profissional.",
-          "url": "https://exemplo.com/portfolio-ana"
-        }
-      ]
+      {
+    "id": "maria-luisa-santos-gomes",
+    "ativo": true,
+    "nome": "Maria Luísa Santos Gomes",
+    "titulo": "Estudante Técnica em Desenvolvimento de Sistemas",
+    "turma": "2º ano",
+    "area": "Desenvolvimento de Sistemas",
+    "foto": "fotos/maria-luisa.png",
+    "contato": {
+      "email": "marialuisasantosgomes22@gmail.com",
+      "cidade": "Cornélio Procópio, Paraná",
+      "github": ""
     },
-    {
-      "id": "bruno-santos",
-      "ativo": true,
-      "nome": "Bruno Santos",
-      "titulo": "Desenvolvedor Back-end",
-      "turma": "3º ano",
-      "area": "APIs e Banco de Dados",
-      "foto": "imagens/alunos/bruno-santos.jpg",
-      "contato": {
-        "email": "bruno.santos@exemplo.com",
-        "cidade": "Cornélio Procópio, Paraná",
-        "github": "https://github.com/bruno-santos-exemplo"
+    "sobre": "Busco novas oportunidades de trabalho para desenvolver minhas habilidades e adquirir experiência profissional.",
+    "competencias": [
+      {
+        "nome": "Curso de Inglês - Kumon unidade de Cornélio Procópio",
+        "nivel": "Concluído em 2025"
       },
-      "sobre": "Estudante interessado em desenvolvimento de APIs, organização de dados e automação de tarefas.",
-      "competencias": [
-        {
-          "nome": "Python",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "SQL",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "Git e GitHub",
-          "nivel": "Intermediário"
-        }
-      ],
-      "formacao": [
-        {
-          "curso": "Técnico em Desenvolvimento de Sistemas",
-          "instituicao": "Instituição de Ensino Exemplo",
-          "periodo": "2024 — 2026"
-        }
-      ],
-      "experiencias": [],
-      "projetos": [
-        {
-          "nome": "Sistema de tarefas",
-          "descricao": "Aplicação para cadastrar, organizar e acompanhar atividades.",
-          "url": "https://exemplo.com/tarefas-bruno"
-        }
-      ]
+      {
+        "nome": "Curso de Matemática - Kumon unidade de Cornélio Procópio",
+        "nivel": "Em andamento"
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Ensino Médio integrado ao Curso Técnico em Desenvolvimento de Sistemas",
+        "instituicao": "3º Colégio da Polícia Militar do Paraná",
+        "periodo": "2025 — 2027"
+      }
+    ],
+    "experiencias": [
+      {
+        "cargo": "Auxiliar",
+        "empresa": "Kumon Unidade Cornélio Procópio",
+        "periodo": "Janeiro/2025 — Atual",
+        "descricao": "Auxílio aos alunos durante as aulas; Organização de materiais e correção de exercícios; Apoio ao orientador nas tarefas do centro."
+      }
+    ],
+    "projetos": [
+      {
+        "nome": "Programa de Iniciação Científica (PIC) - OBMEP",
+        "descricao": "Participante durante 4 anos consecutivos (2022 - 2025).",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "id": "lara-andrade",
+    "ativo": true,
+    "nome": "Lara Andrade",
+    "titulo": "Jovem Aprendiz",
+    "turma": "2º ano",
+    "area": "Análise e Desenvolvimento de Sistemas",
+    "foto": "fotos/lara-andrade.png",
+    "contato": {
+      "email": "Laraandradedasilvacardoso2105@gmail.com",
+      "cidade": "Santa Mariana, Paraná",
+      "github": ""
     },
-    {
-      "id": "carolina-mendes",
-      "ativo": true,
-      "nome": "Carolina Mendes",
-      "titulo": "Desenvolvedora de Software",
-      "turma": "2º ano",
-      "area": "Aplicações Web",
-      "foto": "imagens/alunos/carolina-mendes.jpg",
-      "contato": {
-        "email": "carolina.mendes@exemplo.com",
-        "cidade": "Bandeirantes, Paraná",
-        "linkedin": "https://www.linkedin.com/in/carolina-mendes-exemplo"
+    "sobre": "Estudante de Análise e Desenvolvimento de Sistemas no Colégio da Polícia Militar, tenho 16 anos e busco minha primeira oportunidade profissional. Sou uma jovem atenciosa, responsável e comprometida com os meus deveres.",
+    "competencias": [
+      {
+        "nome": "Pontualidade e comprometimento"
+
       },
-      "sobre": "Estudante com interesse em desenvolvimento web, prototipação e criação de soluções digitais para problemas reais.",
-      "competencias": [
-        {
-          "nome": "HTML e CSS",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "JavaScript",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "Figma",
-          "nivel": "Básico"
-        }
-      ],
-      "formacao": [
-        {
-          "curso": "Técnico em Desenvolvimento de Sistemas",
-          "instituicao": "Instituição de Ensino Exemplo",
-          "periodo": "2025 — 2027"
-        },
-        {
-          "curso": "Curso de Introdução ao Design de Interfaces",
-          "instituicao": "Plataforma de Cursos Exemplo",
-          "periodo": "2026"
-        }
-      ],
-      "experiencias": [
-        {
-          "cargo": "Integrante de projeto escolar",
-          "periodo": "mar. 2026 — jun. 2026",
-          "empresa": "Equipe de Desenvolvimento Web",
-          "descricao": "Participação no planejamento e desenvolvimento de uma aplicação escolar.",
-          "atividades": [
-            "Construção de protótipos.",
-            "Criação de páginas responsivas.",
-            "Testes de usabilidade."
-          ],
-          "tecnologias": [
-            "Figma",
-            "HTML",
-            "CSS"
-          ]
-        }
-      ],
-      "projetos": []
+      {
+        "nome": "Facilidade de adaptação"
+
+      },
+      {
+        "nome": "Proatividade"
+
+      },
+      {
+        "nome": "Atividades administrativas e operacionais",
+        "nivel": "Disponível"
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Ensino Médio - Curso de Análise e Desenvolvimento de Sistemas",
+        "instituicao": "Colégio da Polícia Militar",
+        "periodo": "Cursando 2º Ano"
+      }
+    ],
+    "experiencias": [],
+    "projetos": []
+  },
+  {
+    "id": "ana-lara-moreira-santos",
+    "ativo": true,
+    "nome": "Ana Lara Moreira Santos",
+    "titulo": "Auxiliar de Atendimento",
+    "turma": "2º ano",
+    "area": "Desenvolvimento de Sistemas / Atendimento",
+    "foto": "fotos/ana-lara.png",
+    "contato": {
+      "email": "analaramoreira374@gmail.com",
+      "cidade": "Nova Fátima, Paraná",
+      "github": ""
     },
-    {
-      "id": "diego-rocha",
-      "ativo": true,
-      "nome": "Diego Rocha",
-      "titulo": "Desenvolvedor de Jogos",
-      "turma": "2º ano",
-      "area": "Game Development",
-      "foto": "",
-      "contato": {
-        "email": "diego.rocha@exemplo.com",
-        "cidade": "Cambará, Paraná",
-        "github": "https://github.com/diego-rocha-exemplo"
+    "sobre": "Busco ingressar no mercado de trabalho, aprimorando minhas habilidades e construindo novos conhecimentos por meio de experiências profissionais.",
+    "competencias": [
+      {
+        "nome": "Atendimento ao público"
+
       },
-      "sobre": "Estudante interessado em lógica de programação, criação de jogos e desenvolvimento de experiências interativas.",
-      "competencias": [
-        {
-          "nome": "Lógica de programação",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "GameMaker",
-          "nivel": "Intermediário"
-        },
-        {
-          "nome": "JavaScript",
-          "nivel": "Básico"
-        }
-      ],
-      "formacao": [
-        {
-          "curso": "Técnico em Desenvolvimento de Sistemas",
-          "instituicao": "Instituição de Ensino Exemplo",
-          "periodo": "2025 — 2027"
-        }
-      ],
-      "experiencias": [],
-      "projetos": [
-        {
-          "nome": "Jogo de plataforma",
-          "descricao": "Protótipo de jogo desenvolvido em ambiente educacional.",
-          "url": "https://exemplo.com/jogo-diego"
-        }
-      ]
-    }
+      {
+        "nome": "Edição de vídeos (CapCut)",
+        "nivel": "Básico"
+      },
+      {
+        "nome": "Responsabilidade"
+
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Ensino Médio Integrado ao Curso Técnico em Desenvolvimento de Sistemas",
+        "instituicao": "3º Colégio da Polícia Militar do Paraná - Cornélio Procópio/PR",
+        "periodo": "2025 — 2027"
+      }
+    ],
+    "experiencias": [
+      {
+        "cargo": "Auxiliar de Atendimento",
+        "empresa": "",
+        "periodo": "Agosto de 2025 — Atual",
+        "descricao": "Atendimento ao público; Organização do ambiente e dos produtos; Edição de vídeos para divulgação nas redes sociais."
+      }
+    ],
+    "projetos": []
+  },
+  {
+    "id": "maria-eduarda-de-paiva-nardi",
+    "ativo": true,
+    "nome": "Maria Eduarda de Paiva Nardi",
+    "titulo": "Técnica em Desenvolvimento de Sistemas",
+    "turma": "2º ano",
+    "area": "Desenvolvimento de Sistemas",
+    "foto": "fotos/maria-eduarda.png",
+    "contato": {
+      "email": "paivanardimaria@gmail.com",
+      "cidade": "Congonhinhas, Paraná",
+      "github": "https://github.com/pnmariaa"
+    },
+    "sobre": "Estudante da 2ª série do Ensino Médio Profissionalizante e curso técnico integrado em Desenvolvimento de Sistemas.",
+    "competencias": [
+      {
+        "nome": "Excel básico e Google Workspace",
+        "nivel": "Básico"
+      },
+      {
+        "nome": "Inglês",
+        "nivel": "Intermediário"
+      },
+      {
+        "nome": "Desenvolvimento Web (Python, JavaScript, HTML5, CSS3)",
+        "nivel": "Básico"
+      },
+      {
+        "nome": "Edição de vídeo e imagem (CapCut)",
+        "nivel": "Básico"
+      },
+      {
+        "nome": "Adaptabilidade e trabalho em equipe"
+
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Curso Técnico Integrado em Desenvolvimento de Sistemas",
+        "instituicao": "3º Colégio da Polícia Militar do Paraná (Cornélio Procópio)",
+        "periodo": "Atual — Dezembro de 2027"
+      },
+      {
+        "curso": "Curso de Marketing Digital e Redes Sociais",
+        "instituicao": "SEBRAE",
+        "periodo": "Concluído em Janeiro de 2026"
+      }
+    ],
+    "experiencias": [],
+    "projetos": [
+      {
+        "nome": "Bolsista de Iniciação Científica (PIBIC-EM)",
+        "descricao": "Projeto: Mediação e Zona de Desenvolvimento Proximal na Educação Matemática: um mapeamento da produção acadêmica brasileira sob a Teoria Histórico-Cultural. Orientação: Dra. Thaís de Sá Gomes Novaes.",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "id": "danielly-aiko-messias",
+    "ativo": true,
+    "nome": "Danielly Aiko Messias",
+    "titulo": "Estagiária",
+    "turma": "2º ano",
+    "area": "Análise e Desenvolvimento de Sistemas",
+    "foto": "fotos/danielly-aiko.png",
+    "contato": {
+      "email": "daniellyaiko2021@gmail.com",
+      "cidade": "Cornélio Procópio, Paraná",
+      "github": ""
+    },
+    "sobre": "Busco oportunidades de crescimento profissional, onde eu possa aplicar meus conhecimentos, desenvolver novas habilidades, técnicas e contribuir para o alcance dos objetivos da empresa.",
+    "competencias": [
+      {
+        "nome": "Oficina de Desenvolvimento Web (UTFPR - 18h)",
+        "nivel": "Concluído (2025)"
+      },
+      {
+        "nome": "Lógica de Programação (Senac - 18h)",
+        "nivel": "Concluído (2025)"
+      },
+      {
+        "nome": "Inglês",
+        "nivel": "Intermediário"
+      },
+      {
+        "nome": "Japonês",
+        "nivel": "Básico"
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Técnico em Análise e Desenvolvimento de Sistemas (Noturno)",
+        "instituicao": "3º Colégio da Polícia Militar do Paraná - Cornélio Procópio",
+        "periodo": "2025 — 2027"
+      }
+    ],
+    "experiencias": [
+      {
+        "cargo": "Estagiária",
+        "empresa": "Caixa Econômica Federal",
+        "periodo": "Junho/2026 — Atual",
+        "descricao": "Conferência e organização de documentos; Cadastro e lançamento de informações em sistemas internos; Apoio nas rotinas administrativas da agência; Arquivamento e controle de documentos; Auxílio aos colaboradores nas atividades operacionais."
+      }
+    ],
+    "projetos": []
+  },
+  {
+    "id": "ana-garcia",
+    "ativo": true,
+    "nome": "Ana Garcia",
+    "titulo": "Estudante Técnica em Desenvolvimento de Sistemas",
+    "turma": "2º ano",
+    "area": "Desenvolvimento de Sistemas",
+    "foto": "fotos/ana-beatriz.png",
+    "contato": {
+      "email": "anabgdb099@gmail.com",
+      "cidade": "Santa Mariana, Paraná",
+      "github": ""
+    },
+    "sobre": "Estudante do Ensino Médio Integrado ao Técnico em Desenvolvimento de Sistemas, dedicada, organizada e com facilidade para aprender. Busco minha primeira oportunidade profissional para desenvolver minhas habilidades e contribuir com responsabilidade e comprometimento.",
+    "competencias": [
+      {
+        "nome": "HTML, CSS, JavaScript e MySQL",
+        "nivel": "Básico"
+      },
+      {
+        "nome": "Facilidade para aprender"
+
+      },
+      {
+        "nome": "Organização"
+
+      },
+      {
+        "nome": "Responsabilidade e Trabalho em equipe"
+
+      }
+    ],
+    "formacao": [
+      {
+        "curso": "Técnico em Desenvolvimento de Sistemas",
+        "instituicao": "3º Colégio da Polícia Militar do Paraná - Cornélio Procópio/PR",
+        "periodo": "2º ano do Ensino Médio Integrado"
+      }
+    ],
+    "experiencias": [],
+    "projetos": [
+      {
+        "nome": "Atividades Escolares",
+        "descricao": "Participação no Grêmio Estudantil, olimpíadas e projetos escolares.",
+        "url": ""
+      }
+    ]
+  }
   ]
 }
