@@ -4,6 +4,7 @@ body{
   background:#ffffff;
   color:#1b1b1b;
   transition: background-color .3s, color .3s;
+  overflow-x: hidden;
 }
 
 header {
@@ -255,6 +256,8 @@ input, textarea{
   padding:20px;
   border-radius:15px;
   width:300px;
+  max-width:100%;
+  box-sizing:border-box;
 }
 
 .certificados{
@@ -657,4 +660,95 @@ body.dark-mode .auth-tab {
 }
 body.dark-mode .auth-tab.ativo {
   background: #62a294;
+}
+
+@media (max-width: 760px){
+  nav{
+    align-items:stretch;
+    flex-direction:column;
+    gap:14px;
+    padding:14px 16px;
+  }
+
+  .logo{
+    min-width:0;
+    gap:12px;
+  }
+
+  .logo img{
+    width:48px;
+    height:48px;
+    flex:0 0 auto;
+  }
+
+  .logo p{
+    margin:0;
+    font-size:20px;
+  }
+
+  .menu{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:10px;
+    width:100%;
+  }
+
+  .menu a{
+    min-width:0;
+    padding:10px 8px;
+    text-align:center;
+    overflow-wrap:anywhere;
+  }
+
+  .menu a:last-child:nth-child(odd){
+    grid-column:1 / -1;
+  }
+
+  .banner{
+    min-height:500px;
+    height:auto;
+    padding:40px 16px;
+    box-sizing:border-box;
+  }
+
+  .apresentacao{
+    width:100%;
+    max-width:400px;
+    padding:24px;
+    box-sizing:border-box;
+  }
+
+  section{
+    padding:28px 16px;
+  }
+
+  h1{
+    font-size:clamp(32px, 10vw, 42px);
+  }
+
+  .vagas,
+  .certificados{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .card,
+  .cert{
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  .footer-container{
+    justify-content:flex-start;
+    padding:32px 20px;
+  }
+
+  .footer-container div{
+    width:100%;
+    max-width:none;
+  }
+
+  footer hr{
+    margin:0 20px;
+  }
 }
