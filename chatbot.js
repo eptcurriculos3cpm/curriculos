@@ -35,7 +35,7 @@
 
     rules: [
       {
-        keywords: ["funciona"],
+        keywords: ["funciona", "site", "como", "opções", "como é"],
         reply: `Nosso site disponibiliza algumas possibilidades:
 1- Caso seja empresa, você pode visualizar nosso catálogo de alunos dispostos a serem contratados na página "Ver Currículos" e entrar em contato com eles através de informações disponíveis;
 2- Caso seja aluno, você pode criar um currículo diretamente no nosso site clicando em "Criar Currículo";
@@ -44,27 +44,27 @@
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
-        keywords: ["contratar"],
+        keywords: ["contratar", "estagiario", "estagiário", "estagiarios", "estágiarios", "emprego"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ter profissionais qualificados para seu perfil!
 Você pode acessar todos os nossos alunos e suas devidas informações de contato e qualificações em "Catálogos", escolher os que mais se encaixam para aquilo que procura e entrar em contato para uma entrevista.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`,
         action: "scrollToCatalog"
       },
       {
-        keywords: ["currículo"],
+        keywords: ["currículo", "curriculo", "enviar", "quero enviar", "quero criar", "criar currículo", "criar curriculo"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ajudar você a entrar no mercado de trabalho.
 O processo é bem simples, você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, você poderá visualizar seu currículo e compartilhá-lo com empresas interessadas.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
-        keywords: ["cpm"],
+        keywords: ["cpm", "3º cpm", "3 cpm"],
         reply: `O 3º Colégio da Polícia Militar do Paraná foi criado como um órgão de apoio à Polícia Militar do Paraná e como um estabelecimento de ensino formal, pelo Decreto Governamental nº 11.334 de 15 de outubro de 2018.
 Publicado no Diário Oficial nº 10.294 da mesma data, o colégio iniciou oficialmente suas atividades no dia 04 de fevereiro de 2019.
 Fundado a partir do antigo Colégio Estadual Alberto Carazzai, em funcionamento desde 1970.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
-        keywords: ["turno"],
+        keywords: ["turno", "periodos", "periodo", "matutino", "vespertino", "noturno"],
         reply: `O nosso colégio possui alunos em três turnos, sendo eles: Matutino para Ensino Médio regular, Vespertino para Anos Finais (6º ao 9º ano) e Noturno para Ensino Médio integrado com curso técnico de Desenvolvimento de Sistemas.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
@@ -351,7 +351,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
 
     if (includeMaps) {
       const mapsLink = document.createElement("a");
-      mapsLink.href = "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIPCAIQLhgKGMcBGNEDGIAEMgcIAxAAGIAEMgcIBBAAGIAEMgYIBRBFGDwyBggGEEUYPTIGCAcQRRg90gEIMTAzMmowajSoAgCwAgE&um=1&ie=UTF-8&fb=1&gl=br&sa=X&geocode=KWHFMVNA3-qUMbT_bT0-6cnJ&daddr=Av.+Minas+Gerais,+1295+-+Corn%C3%A9lio+Proc%C3%B3pio,+PR,+86300-000";
+      mapsLink.href = "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwjokOX75v-VAxUAAAAAHQAAAAAQBA..i&aep=10&cs=1&udm=50&mstk=AUtExfAbI34zETgQ9VuuSbZVpax7hIJ6dwZNo7HZ_pM2qOgHLN4Hi8IYI1EhbhylKyMXL0_QZAvjKXt8nxNLzeaECdBQShctIbWy-jmYYvyM3xakJDluKPyC7ThM3Wq_KRujIDKI0nlksb_e4mHwLa4jyv8AZobrpTK6xTeG4WxyD-CBdiHYHs4csCKEB_kRRiY10yQ5-6_A5GHtC17yxN4EyOXNFqk9XpgYG6dOHFxiXOaesdPJS1BfwB0kjcFGndtWnptSVgLLr_w-Aulbo23LogcndcfNjDOG2btSNyZkJedB8F_8zd_XaCxlRlfuBwia3hxmGy1jtq21rQ&pvq=Cg0vZy8xMWg1cngwMGJ0YmQSYhJgCg1zY2hvb2wgZmFjYWRlCg5zY2hvb2wgbGlicmFyeQoQc2Nob29sIGNvdXJ0eWFyZAoMc3BvcnRzIGNvdXJ0ChFzY2hvb2wgYXVkaXRvcml1bQoMY29tcHV0ZXIgbGFigAEC&fvr=1&um=1&ie=UTF-8&fb=1&gl=br&sa=X&ftid=0x94eadf405331c561:0xc9c9e93e3d6dffb4";
       mapsLink.target = "_blank";
       mapsLink.rel = "noopener noreferrer";
       mapsLink.textContent = "📍 Ver no Google Maps";
