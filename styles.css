@@ -128,13 +128,28 @@ nav{
   width:400px;
 }
 
-button{
+.botao-criar-curriculo{
+  display: inline-block;
   background:#043175;
   color:white;
   border:none;
   padding:12px 20px;
   border-radius:10px;
   cursor:pointer;
+  text-decoration:none;
+  font-weight: bold;
+  transition: transform .3s, background-color .3s;
+}
+
+.botao-criar-curriculo:hover,
+.botao-criar-curriculo:focus-visible{
+  background:#1565c0;
+  transform:translateY(-3px);
+}
+
+.botao-criar-curriculo:focus-visible{
+  outline:3px solid #62a294;
+  outline-offset:3px;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
