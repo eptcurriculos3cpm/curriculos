@@ -60,53 +60,6 @@ nav{
   font-weight: bold;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#043175;
-  padding:15px 30px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.logo img{
-  width:60px;
-  height:60px;
-  border-radius:100%;
-}
-
-.logo p{
-  color:white;
-  font-size:22px;
-  font-weight:bold;
-}
-
-.menu{
-  display:flex;
-  gap:20px;
-}
-
-.menu a{
-  color:white;
-  text-decoration:none;
-  background:#1565c0;
-  padding:10px 15px;
-  border-radius:15px;
-}
-
-.menu a:hover{
-  background:#62a294;
-}
-
-.menu a.ativo{
-  background-color: #62a294;
-  font-weight: bold;
-}
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -129,29 +82,21 @@ nav{
   width:400px;
 }
 
-.botao-criar-curriculo{
+.botao-criar-curriculo, .botao-criar-curriculo:visited {
   display: inline-block;
-  background:#043175;
-  color:white;
-  border:none;
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  text-decoration:none;
+  background: #043175;
+  color: rgb(250, 250, 250);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: bold;
-  transition: transform .3s, background-color .3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.botao-criar-curriculo:hover,
-.botao-criar-curriculo:focus-visible{
-  background:#1565c0;
-  transform:translateY(-3px);
-}
-
-.botao-criar-curriculo:focus-visible{
-  outline:3px solid #62a294;
-  outline-offset:3px;
-}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* SEÇÕES */
