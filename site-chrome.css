@@ -6,6 +6,7 @@ body {
   font-family: Georgia, serif;
   color: #1b1b1b;
   background: #fff;
+  overflow-x: hidden;
 }
 
 header.site-chrome {
@@ -97,6 +98,53 @@ body.dark-mode { color: #e5e7eb; background: #1c1c1c; }
 body.dark-mode .site-footer-standard { background: #061b42; }
 
 @media (max-width: 760px) {
-  .site-chrome nav { padding: 14px 18px; align-items: flex-start; flex-direction: column; }
-  .site-chrome .menu { justify-content: flex-start; }
+  .site-chrome nav {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .site-chrome .logo {
+    min-width: 0;
+    gap: 12px;
+    white-space: normal;
+  }
+
+  .site-chrome .logo img {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+  }
+
+  .site-chrome .menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .site-chrome .menu a,
+  .site-chrome .menu button {
+    min-width: 0;
+    padding: 10px 8px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .site-chrome .menu > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer-standard .footer-container {
+    justify-content: flex-start;
+    padding: 32px 20px;
+  }
+
+  .site-footer-standard .footer-container div {
+    width: 100%;
+    max-width: none;
+  }
+
+  .site-footer-standard hr { margin: 0 20px; }
 }

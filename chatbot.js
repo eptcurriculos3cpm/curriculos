@@ -39,8 +39,8 @@
         reply: `Nosso site disponibiliza algumas possibilidades:
 1- Caso seja empresa, você pode visualizar nosso catálogo de alunos dispostos a serem contratados na página "Ver Currículos" e entrar em contato com eles através de informações disponíveis;
 2- Caso seja aluno, você pode criar um currículo diretamente no nosso site clicando em "Criar Currículo";
-3- Sites que disponibilizam cursus com certificados gratuítos para aprimorar sua carreira no mercado de trabalho;
-4- Vagas disponibilizadas por empresas se houver interesse para nossos alunos entrarem em contato e enviarem seus currículos.
+3- Sites que disponibilizam cursos com certificados gratuitos para aprimorar sua carreira no mercado de trabalho;
+4- Vagas disponibilizadas por empresas para alunos interessados entrarem em contato e enviarem seus currículos.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
@@ -53,7 +53,7 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
       {
         keywords: ["currículo", "curriculo", "enviar", "quero enviar", "quero criar", "criar currículo", "criar curriculo"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ajudar você a entrar no mercado de trabalho.
-O processo é bem simples, você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, suas informações serão enviadas para nossa equie, que vai te enviar um email com confirmação de dados e um anexo do termo da LGPD (Lei Geral da Proteção de Dados) que deverá ser assinado e nos eviado pelo mesmo endereço. Logo após isso, acadastraemos seus dados na nossa plataforma e deixaremos seu perfil dispinível.
+O processo é bem simples: você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, suas informações serão enviadas para nossa equipe, que enviará um e-mail com a confirmação dos dados e um anexo do termo da LGPD (Lei Geral de Proteção de Dados). O documento deverá ser assinado e enviado a nós pelo mesmo endereço de e-mail. Em seguida, cadastraremos seus dados na plataforma e deixaremos seu perfil disponível.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {

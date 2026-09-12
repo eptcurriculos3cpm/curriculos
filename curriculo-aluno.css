@@ -353,9 +353,17 @@ nav {
 @page { size: A4; margin: 0; }
 
 @media print {
-  html, body { background: var(--branco); }
-  .cabecalho-site, .mensagem-estado { display: none !important; }
-  .pagina-a4 {
+  html, body {
+    width: 210mm;
+    margin: 0;
+    background: var(--branco);
+  }
+
+  /* Na impressao, exibe somente o curriculo preenchido pelo JavaScript. */
+  body > :not(#pagina-curriculo) { display: none !important; }
+
+  #pagina-curriculo {
+    display: block;
     width: 210mm;
     min-height: 297mm;
     margin: 0;

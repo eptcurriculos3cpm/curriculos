@@ -4,6 +4,7 @@ body{
   background:#ffffff;
   color:#1b1b1b;
   transition: background-color .3s, color .3s;
+  overflow-x: hidden;
 }
 
 header {
@@ -59,53 +60,6 @@ nav{
   font-weight: bold;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#043175;
-  padding:15px 30px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.logo img{
-  width:60px;
-  height:60px;
-  border-radius:100%;
-}
-
-.logo p{
-  color:white;
-  font-size:22px;
-  font-weight:bold;
-}
-
-.menu{
-  display:flex;
-  gap:20px;
-}
-
-.menu a{
-  color:white;
-  text-decoration:none;
-  background:#1565c0;
-  padding:10px 15px;
-  border-radius:15px;
-}
-
-.menu a:hover{
-  background:#62a294;
-}
-
-.menu a.ativo{
-  background-color: #62a294;
-  font-weight: bold;
-}
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -128,29 +82,21 @@ nav{
   width:400px;
 }
 
-.botao-criar-curriculo{
+.botao-criar-curriculo, .botao-criar-curriculo:visited {
   display: inline-block;
-  background:#043175;
-  color:white;
-  border:none;
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  text-decoration:none;
+  background: #043175;
+  color: rgb(250, 250, 250);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: bold;
-  transition: transform .3s, background-color .3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.botao-criar-curriculo:hover,
-.botao-criar-curriculo:focus-visible{
-  background:#1565c0;
-  transform:translateY(-3px);
-}
-
-.botao-criar-curriculo:focus-visible{
-  outline:3px solid #62a294;
-  outline-offset:3px;
-}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* SEÇÕES */
@@ -270,6 +216,8 @@ input, textarea{
   padding:20px;
   border-radius:15px;
   width:300px;
+  max-width:100%;
+  box-sizing:border-box;
 }
 
 .certificados{
@@ -672,4 +620,95 @@ body.dark-mode .auth-tab {
 }
 body.dark-mode .auth-tab.ativo {
   background: #62a294;
+}
+
+@media (max-width: 760px){
+  nav{
+    align-items:stretch;
+    flex-direction:column;
+    gap:14px;
+    padding:14px 16px;
+  }
+
+  .logo{
+    min-width:0;
+    gap:12px;
+  }
+
+  .logo img{
+    width:48px;
+    height:48px;
+    flex:0 0 auto;
+  }
+
+  .logo p{
+    margin:0;
+    font-size:20px;
+  }
+
+  .menu{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:10px;
+    width:100%;
+  }
+
+  .menu a{
+    min-width:0;
+    padding:10px 8px;
+    text-align:center;
+    overflow-wrap:anywhere;
+  }
+
+  .menu a:last-child:nth-child(odd){
+    grid-column:1 / -1;
+  }
+
+  .banner{
+    min-height:500px;
+    height:auto;
+    padding:40px 16px;
+    box-sizing:border-box;
+  }
+
+  .apresentacao{
+    width:100%;
+    max-width:400px;
+    padding:24px;
+    box-sizing:border-box;
+  }
+
+  section{
+    padding:28px 16px;
+  }
+
+  h1{
+    font-size:clamp(32px, 10vw, 42px);
+  }
+
+  .vagas,
+  .certificados{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .card,
+  .cert{
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  .footer-container{
+    justify-content:flex-start;
+    padding:32px 20px;
+  }
+
+  .footer-container div{
+    width:100%;
+    max-width:none;
+  }
+
+  footer hr{
+    margin:0 20px;
+  }
 }
