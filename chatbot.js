@@ -46,14 +46,14 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
       {
         keywords: ["contratar", "estagiario", "estagiário", "estagiarios", "estágiarios", "emprego"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ter profissionais qualificados para seu perfil!
-Você pode acessar todos os nossos alunos e suas devidas informações de contato e qualificações em "Catálogos", escolher os que mais se encaixam para aquilo que procura e entrar em contato para uma entrevista.
+Você pode acessar todos os nossos alunos e suas devidas informações de contato e qualificações em "Ver Currículos", escolher os que mais se encaixam para aquilo que procura e entrar em contato para uma entrevista.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`,
-        action: "scrollToCatalog"
+        action: "openCatalog"
       },
       {
         keywords: ["currículo", "curriculo", "enviar", "quero enviar", "quero criar", "criar currículo", "criar curriculo"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ajudar você a entrar no mercado de trabalho.
-O processo é bem simples, você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, você poderá visualizar seu currículo e compartilhá-lo com empresas interessadas.
+O processo é bem simples, você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, suas informações serão enviadas para nossa equie, que vai te enviar um email com confirmação de dados e um anexo do termo da LGPD (Lei Geral da Proteção de Dados) que deverá ser assinado e nos eviado pelo mesmo endereço. Logo após isso, acadastraemos seus dados na nossa plataforma e deixaremos seu perfil dispinível.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
@@ -102,7 +102,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
       }
     ],
     fallbackReply: "Desculpe, não entendi sua pergunta. Por favor, tente novamente ou escolha uma das opções do menu.",
-    catalogSectionId: "catalogo"
+    catalogSectionId: "carrossel"
   };
 
   const style = document.createElement("style");
@@ -336,7 +336,10 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     if (matched) {
       botSay(matched.reply, () => {
         if (matched.action === "scrollToCatalog") scrollToCatalog();
-        showEndOrMenuButtons(matched.action === "openMaps");
+        showEndOrMenuButtons(
+          matched.action === "openMaps",
+          matched.action === "openCatalog"
+        );
       });
     } else {
       botSay(CONFIG.fallbackReply, showEndOrMenuButtons);
@@ -344,7 +347,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
   }
 
   // Depois de cada resposta: só dois botões, em vez do menu inteiro de novo
-  function showEndOrMenuButtons(includeMaps = false) {
+  function showEndOrMenuButtons(includeMaps = false, includeCatalog = false) {
     clearQuickReplies();
     const wrap = document.createElement("div");
     wrap.className = "cb-quick-replies";
@@ -356,6 +359,16 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
       mapsLink.rel = "noopener noreferrer";
       mapsLink.textContent = "📍 Ver no Google Maps";
       wrap.appendChild(mapsLink);
+    }
+
+    if (includeCatalog) {
+      const catalogButton = document.createElement("button");
+      catalogButton.type = "button";
+      catalogButton.textContent = "Ver Currículos";
+      catalogButton.addEventListener("click", () => {
+        window.location.href = "vercurriculos.html#carrossel";
+      });
+      wrap.appendChild(catalogButton);
     }
 
     const backBtn = document.createElement("button");
