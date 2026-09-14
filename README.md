@@ -1,4 +1,4 @@
-# Currículos 3º CPM
+# Curriculum CPM
 
 Site desenvolvido para o projeto do 2º Desafio EPT, com o objetivo de divulgar currículos de estudantes do 3º Colégio da Polícia Militar do Paraná e facilitar o acesso a oportunidades profissionais, vagas e cursos.
 

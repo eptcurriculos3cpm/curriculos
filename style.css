@@ -1,7 +1,7 @@
 body{
   margin:0;
   font-family: Georgia, serif;
-  background:#ffffff;
+  background:#ffffffd0;
   color:#1b1b1b;
   transition: background-color .3s, color .3s;
   overflow-x: hidden;
@@ -151,7 +151,7 @@ section{
   box-sizing: border-box;
   font: inherit;
   color: #1b1b1b;
-  background: #fff;
+  background: #e7e4e4;
   transition: border-color .2s, box-shadow .2s;
 }
 
@@ -234,6 +234,7 @@ input, textarea{
   padding:20px;
   border-radius:15px;
 }
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* CHATBOT */
@@ -348,6 +349,11 @@ footer hr{
   background:#1565c0;
 }
 
+
+
+
+
+
 /* BOTÕES */
 button{
   transition:.3s;
@@ -430,7 +436,7 @@ h2{
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffffd0;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -469,7 +475,7 @@ body.dark-mode .noticia p{
 body.dark-mode input,
 body.dark-mode textarea{
   background: #1f2937;
-  color: #fff;
+  color: #dad4d4d0;
   border-color: #555;
 }
 
