@@ -166,7 +166,7 @@
     preencherExperiencias(aluno.experiencias);
     preencherProjetos(aluno.projetos);
 
-    document.title = `${nome} — ${titulo || "Currículo"} | Currículos 3º CPM`;
+    document.title = `${nome} — ${titulo || "Currículo"} | Curriculum CPM`;
     elementos.curriculo.setAttribute("aria-label", `Currículo de ${nome}`);
   }
 
@@ -175,7 +175,7 @@
     elementos.pagina.hidden = true;
     elementos.erro.hidden = false;
     elementos.mensagemErro.textContent = mensagem;
-    document.title = "Currículo não encontrado | Currículos 3º CPM";
+    document.title = "Currículo não encontrado | Curriculum CPM";
     if (erro) console.error("[Currículo do aluno]", erro);
   }
 
