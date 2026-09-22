@@ -1,0 +1,535 @@
+/* Estilos da folha individual do estudante, incluindo a versão de impressão. */
+
+/* Guarda cores e medidas em variáveis CSS para reutilizar com var(). */
+:root {
+  --azul-escuro: #043175;
+  --azul: #1565c0;
+  --verde: #62a294;
+  --fundo: #eaf0f7;
+  --branco: #fff;
+  --texto: #243244;
+  --texto-suave: #5d6978;
+  --linha: #d9e2ed;
+  --dourado: #f0b44d;
+  --largura-a4: 210mm;
+}
+
+/* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define o fundo ou a rolagem do documento inteiro. */
+html {
+  background: var(--fundo);
+}
+
+/* Define a fonte, o fundo e a cor do texto da página. */
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--texto);
+  background: var(--fundo);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/* Usa a cor do texto ao redor nos links desta página. */
+a {
+  color: inherit;
+}
+
+/* Mantém as imagens dentro da largura disponível. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Alinha a logo e os links dentro da faixa de navegação. */
+nav {
+  display: flex;
+  width: min(1180px, 100%);
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0 auto;
+  padding: 13px 28px;
+}
+
+/* Alinha a logomarca e o nome do site com os tamanhos originais. */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--branco);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Alinha a logomarca e o nome do site com os tamanhos originais. */
+.logo img {
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Mantém a folha do currículo nas proporções usadas para impressão. */
+.pagina-a4 {
+  width: min(calc(100% - 32px), var(--largura-a4));
+  min-height: 297mm;
+  margin: 30px auto;
+  overflow: hidden;
+  background: var(--branco);
+  box-shadow: 0 18px 55px rgba(4,49,117,.18);
+}
+
+/* Organiza o conteúdo do currículo e mantém suas medidas. */
+.curriculo {
+  display: grid;
+  min-height: 297mm;
+  grid-template-columns: 34% 66%;
+}
+
+/* Mantém as cores e o espaço da coluna de contato e competências. */
+.painel-lateral {
+  min-width: 0;
+  padding: 38px 28px;
+  color: #eef5ff;
+  background: linear-gradient(160deg, var(--azul), var(--azul-escuro) 58%);
+}
+
+/* Mantém a foto circular com a borda, o tamanho e o recorte originais. */
+.foto-aluno {
+  width: min(100%, 190px);
+  aspect-ratio: 1;
+  margin: 0 auto 30px;
+  border: 7px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  background: var(--azul);
+  object-fit: cover;
+}
+
+/* Organiza os títulos e a separação das seções da coluna lateral. */
+.secao-lateral + .secao-lateral {
+  margin-top: 32px;
+}
+
+/* Organiza os títulos e a separação das seções de conteúdo. */
+.secao-lateral h2,
+.secao-principal h2 {
+  margin: 0 0 16px;
+  font-size: .82rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* Organiza os títulos e a separação das seções da coluna lateral. */
+.secao-lateral h2 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  color: var(--branco);
+}
+
+/* Organiza as tecnologias em etiquetas que podem quebrar a linha. */
+.lista-contato,
+.lista-competencias,
+.lista-conteudo,
+.lista-atividades,
+.lista-tecnologias {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Mantém o espaço e o tamanho do texto de cada contato. */
+.item-contato {
+  min-width: 0;
+  margin-bottom: 14px;
+  font-size: .84rem;
+}
+
+/* Destaca o tipo de contato acima do valor informado. */
+.rotulo-contato {
+  display: block;
+  margin-bottom: 2px;
+  color: #bcd3ee;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Mantém o espaço e o tamanho do texto de cada contato. */
+.item-contato a,
+.item-contato span {
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.item-contato a:hover {
+  text-decoration: underline;
+}
+
+/* Organiza o nome e o nível de cada competência. */
+.competencia {
+  margin-bottom: 15px;
+}
+
+/* Organiza o nome e o nível de cada competência. */
+.competencia-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+  font-size: .82rem;
+}
+
+/* Mantém o tamanho e a cor do nível de uma competência. */
+.nivel {
+  color: #bcd3ee;
+  font-size: .72rem;
+}
+
+/* Mantém o espaço interno da coluna principal do currículo. */
+.painel-principal {
+  min-width: 0;
+  padding: 52px 42px;
+}
+
+/* Separa o nome e o título profissional do restante do currículo. */
+.identificacao {
+  margin-bottom: 38px;
+  padding-bottom: 28px;
+  border-bottom: 3px solid var(--verde);
+}
+
+/* Mantém a identificação da turma e da área profissional. */
+.turma-area {
+  margin: 0 0 10px;
+  color: var(--azul);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+/* Separa o nome e o título profissional do restante do currículo. */
+.identificacao h1 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--azul-escuro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+}
+
+/* Destaca o título profissional com as medidas originais. */
+.titulo-profissional {
+  margin: 12px 0 0;
+  color: var(--verde);
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+/* Organiza os títulos e a separação das seções de conteúdo. */
+.secao-principal + .secao-principal {
+  margin-top: 34px;
+}
+
+/* Organiza os títulos e a separação das seções de conteúdo. */
+.secao-principal h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--azul-escuro);
+}
+
+/* Organiza os títulos e a separação das seções de conteúdo. */
+.secao-principal h2::after {
+  height: 1px;
+  flex: 1;
+  content: "";
+  background: var(--linha);
+}
+
+/* Organiza os títulos e a separação das seções de conteúdo. */
+.secao-principal > p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+/* Mantém o recuo e os marcadores dos itens do currículo. */
+.item-conteudo {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Mantém o recuo e os marcadores dos itens do currículo. */
+.item-conteudo::before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  content: "";
+}
+
+/* Mantém o recuo e os marcadores dos itens do currículo. */
+.item-conteudo + .item-conteudo {
+  margin-top: 25px;
+}
+
+/* Mantém o recuo e os marcadores dos itens do currículo. */
+.item-conteudo h3 {
+  margin: 0;
+  color: var(--azul-escuro);
+  font-size: 1rem;
+}
+
+/* Destaca os dados de instituição e empresa dentro de cada item. */
+.subtitulo,
+.periodo,
+.descricao {
+  margin: 4px 0 0;
+}
+
+/* Destaca os dados de instituição e empresa dentro de cada item. */
+.subtitulo {
+  font-weight: 700;
+}
+
+/* Destaca o período de estudo ou trabalho com a cor original. */
+.periodo {
+  color: var(--verde);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+/* Mantém a cor e o tamanho dos textos de descrição. */
+.descricao {
+  color: var(--texto-suave);
+  font-size: .91rem;
+}
+
+/* Organiza as atividades com marcadores e recuo. */
+.lista-atividades {
+  margin-top: 10px;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+/* Organiza as atividades com marcadores e recuo. */
+.lista-atividades li {
+  margin-top: 5px;
+  color: var(--texto-suave);
+  font-size: .87rem;
+}
+
+/* Organiza as tecnologias em etiquetas que podem quebrar a linha. */
+.lista-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+/* Organiza as tecnologias em etiquetas que podem quebrar a linha. */
+.lista-tecnologias li {
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: var(--azul-escuro);
+  background: #e9f1fb;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+/* Destaca o link usado para visitar um projeto do estudante. */
+.link-projeto {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--azul);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+/* Mantém o aviso de carregamento ou erro centralizado na página. */
+.mensagem-estado {
+  width: min(calc(100% - 32px), 700px);
+  margin: 70px auto;
+  padding: 45px 28px;
+  border-radius: 20px;
+  background: var(--branco);
+  box-shadow: 0 14px 35px rgba(4,49,117,.14);
+  text-align: center;
+}
+
+/* Mantém o aviso de carregamento ou erro centralizado na página. */
+.mensagem-estado h1 {
+  margin-top: 0;
+  color: var(--azul-escuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Mantém o aviso de carregamento ou erro centralizado na página. */
+.mensagem-estado p {
+  color: var(--texto-suave);
+}
+
+/* Mantém o aviso de carregamento ou erro centralizado na página. */
+.mensagem-estado a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--branco);
+  background: var(--azul);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Garante que os elementos marcados como hidden não apareçam na tela. */
+[hidden] {
+  display: none !important;
+}
+
+/* Mostra o foco para quem usa o teclado e mantém a indicação de interação. */
+:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 4px;
+}
+
+/* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 760px) {
+  /* Alinha a logo e os links dentro da faixa de navegação. */
+  nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* Mantém a folha do currículo nas proporções usadas para impressão. */
+  .pagina-a4 {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* Organiza o conteúdo do currículo e mantém suas medidas. */
+  .curriculo {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  /* Mantém o espaço interno da coluna principal do currículo. */
+  .painel-lateral,
+  .painel-principal {
+    padding: 34px clamp(22px, 7vw, 44px);
+  }
+
+  /* Mantém a foto circular com a borda, o tamanho e o recorte originais. */
+  .foto-aluno {
+    width: 145px;
+  }
+
+}
+
+/* Em telas de até 450 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 450px) {
+  /* Alinha a logo e os links dentro da faixa de navegação. */
+  nav {
+    padding: 12px 16px;
+  }
+
+  /* Alinha a logomarca e o nome do site com os tamanhos originais. */
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Mantém o espaço interno da coluna principal do currículo. */
+  .painel-lateral,
+  .painel-principal {
+    padding-inline: 20px;
+  }
+
+}
+
+/* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
+@media (prefers-reduced-motion: reduce) {
+  /* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+
+}
+
+/* Define o papel A4 sem margem extra do navegador. */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* Prepara a impressão para mostrar somente a folha do currículo. */
+@media print {
+  /* Define a fonte, o fundo e a cor do texto da página. */
+  html,
+  body {
+    width: 210mm;
+    margin: 0;
+    background: var(--branco);
+  }
+
+  /* Na impressão, esconde tudo que não faz parte do currículo preenchido. */
+  body > :not(#pagina-curriculo) {
+    display: none !important;
+  }
+
+  /* Usa a cor do texto ao redor nos links desta página. */
+  #pagina-curriculo {
+    display: block;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  /* Organiza o conteúdo do currículo e mantém suas medidas. */
+  .curriculo {
+    min-height: 297mm;
+  }
+
+  /* Mantém as cores e o espaço da coluna de contato e competências. */
+  .painel-lateral {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Organiza os títulos e a separação das seções da coluna lateral. */
+  .secao-lateral,
+  .identificacao,
+  .item-conteudo {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Organiza os títulos e a separação das seções de conteúdo. */
+  .secao-principal h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+}
+

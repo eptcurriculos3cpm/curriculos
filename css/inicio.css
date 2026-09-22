@@ -1,0 +1,78 @@
+/* Estilos exclusivos do banner e das notícias da página inicial. */
+
+/* Mantém a imagem de fundo e posiciona a apresentação da página inicial. */
+.banner {
+  height: 500px;
+  background-image: url("https://www.folhadelondrina.com.br/img/Artigo-Destaque/3160000/Cornelio-Procopio-se-consolida-como-polo-regional-0316522800202202150851.jpg?xid=5674750");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+
+/* Mantém a caixa de texto sobre a imagem da página inicial. */
+.apresentacao {
+  background: rgba(255, 255, 255, 0.723);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+}
+
+/* Mantém o fundo e os espaços dos artigos de novidades. */
+.novidades article {
+  background: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+}
+
+/* Destaca cada notícia com a borda lateral e a sombra originais. */
+.noticia {
+  background: white;
+  border-left: 6px solid #043175;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transition: .3s;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.noticia:hover {
+  transform: translateY(-5px);
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode .apresentacao,
+body.dark-mode .novidades article,
+body.dark-mode .noticia {
+  background: #2b2b2b;
+  color: #f5f5f5;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode .noticia p {
+  color: #f5f5f5;
+}
+
+/* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 760px) {
+  /* Mantém a imagem de fundo e posiciona a apresentação da página inicial. */
+  .banner {
+    min-height: 500px;
+    height: auto;
+    padding: 40px 16px;
+    box-sizing: border-box;
+  }
+
+  /* Mantém a caixa de texto sobre a imagem da página inicial. */
+  .apresentacao {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+}
+

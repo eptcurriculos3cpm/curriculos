@@ -1,0 +1,673 @@
+/* Estilos próprios da página de modelos, preservados sem adotar um novo layout. */
+
+/* Guarda cores e medidas em variáveis CSS para reutilizar com var(). */
+:root {
+  --bg: #f2f2f0;
+  --surface: #ffffff;
+  --surface-soft: #f8f8f7;
+  --text: #252525;
+  --muted: #686868;
+  --accent: #484444;
+  --accent-hover: #302d2d;
+  --line: #ddddda;
+  --focus: #8b5cf6;
+  --shadow: 0 18px 45px rgba(25, 25, 25, 0.10);
+  --shadow-card: 0 10px 28px rgba(25, 25, 25, 0.09);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --container: 1180px;
+  --transition: 180ms ease;
+}
+
+/* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define o fundo ou a rolagem do documento inteiro. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define a fonte, o fundo e a cor do texto da página. */
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(circle at top left, rgba(72, 68, 68, 0.09), transparent 34rem), var(--bg);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Mantém a transição dos botões ao interagir com eles. */
+button,
+input {
+  font: inherit;
+}
+
+/* Mantém as imagens dentro da largura disponível. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Usa a cor do texto ao redor nos links desta página. */
+a {
+  color: inherit;
+}
+
+/* Limita a largura e centraliza o conteúdo da página de modelos. */
+.container {
+  width: min(calc(100% - 32px), var(--container));
+  margin-inline: auto;
+}
+
+/* Mantém a apresentação da página de modelos com suas medidas originais. */
+.hero {
+  padding: 46px 0 34px;
+}
+
+/* Mantém o painel de apresentação e sua decoração. */
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  padding: clamp(30px, 6vw, 72px);
+  border-radius: var(--radius-lg);
+  color: #ffffff;
+  background: linear-gradient(120deg, rgba(31, 29, 29, 0.98), rgba(72, 68, 68, 0.90)), var(--accent);
+  box-shadow: var(--shadow);
+}
+
+/* Mantém o painel de apresentação e sua decoração. */
+.hero-panel::before,
+.hero-panel::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Mantém o painel de apresentação e sua decoração. */
+.hero-panel::before {
+  top: -130px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+}
+
+/* Mantém o painel de apresentação e sua decoração. */
+.hero-panel::after {
+  right: 210px;
+  bottom: -180px;
+  width: 300px;
+  height: 300px;
+}
+
+/* Mantém o texto da apresentação à frente da decoração. */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+/* Mantém a pequena identificação acima do título da apresentação. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Mantém a pequena identificação acima do título da apresentação. */
+.eyebrow::before {
+  width: 32px;
+  height: 2px;
+  content: "";
+  background: currentColor;
+}
+
+/* Mantém a apresentação da página de modelos com suas medidas originais. */
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(2.35rem, 7vw, 5.2rem);
+  font-weight: 300;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+/* Mantém a descrição abaixo do título da apresentação. */
+.hero-description {
+  max-width: 670px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.80);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+
+/* Alinha os links de ação na apresentação. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* Mantém o formato e as transições dos botões da página de modelos. */
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Mantém o formato e as transições dos botões da página de modelos. */
+.button-primary {
+  color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Mantém o formato e as transições dos botões da página de modelos. */
+.button-secondary {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+/* Mantém o formato e as transições dos botões da página de modelos. */
+.button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Mantém o espaço das seções de estudantes e de apresentação do projeto. */
+.students-section {
+  padding: 38px 0 86px;
+}
+
+/* Alinha a apresentação da seção e os controles do carrossel. */
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Limita a largura do texto que apresenta a seção. */
+.section-heading-copy {
+  max-width: 690px;
+}
+
+/* Destaca a identificação curta acima do título da seção. */
+.section-kicker {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Alinha a apresentação da seção e os controles do carrossel. */
+.section-heading h2 {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* Mantém o espaço e a cor do texto de apresentação da seção. */
+.section-description {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+/* Alinha os botões de rolagem do carrossel de modelos. */
+.carousel-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+/* Mantém os controles circulares e seus efeitos de interação. */
+.carousel-button {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(25, 25, 25, 0.06);
+  transition: transform var(--transition), color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.carousel-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+/* Indica que o controle está desabilitado porque não há outro item nessa direção. */
+.carousel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+/* Mantém os controles circulares e seus efeitos de interação. */
+.carousel-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Alinha a busca e a quantidade de resultados com o fundo original. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+/* Organiza o ícone e o campo de busca dos estudantes. */
+.search-box {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+/* Organiza o ícone e o campo de busca dos estudantes. */
+.search-box:focus-within {
+  border-color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(72, 68, 68, 0.10);
+}
+
+/* Organiza o ícone e o campo de busca dos estudantes. */
+.search-box svg {
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  color: var(--muted);
+  fill: currentColor;
+}
+
+/* Organiza o ícone e o campo de busca dos estudantes. */
+.search-box input {
+  width: 100%;
+  min-height: 46px;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+}
+
+/* Organiza o ícone e o campo de busca dos estudantes. */
+.search-box input::placeholder {
+  color: #8a8a8a;
+}
+
+/* Mantém a apresentação da quantidade de resultados encontrados. */
+.results-status {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Serve de referência para o posicionamento do carrossel de modelos. */
+.carousel {
+  position: relative;
+}
+
+/* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+.carousel-track {
+  display: grid;
+  grid-auto-columns: minmax(250px, 31%);
+  grid-auto-flow: column;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 4px 4px 24px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+/* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+.carousel-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+.carousel-track::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* Encaixa cada card na posição de parada da rolagem. */
+.student-card {
+  scroll-snap-align: start;
+}
+
+/* Mantém o card inteiro clicável com sua borda, sombra e altura. */
+.student-link {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  min-height: 430px;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.student-link:hover {
+  transform: translateY(-7px);
+  border-color: #c5c3c0;
+  box-shadow: 0 22px 42px rgba(25, 25, 25, 0.14);
+}
+
+/* Reserva a proporção original da área da foto do estudante. */
+.student-photo-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #dedddb;
+}
+
+/* Recorta a foto para preencher a área reservada no card. */
+.student-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms ease;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.student-link:hover .student-photo {
+  transform: scale(1.045);
+}
+
+/* Mantém a etiqueta da turma sobre a foto. */
+.student-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  max-width: calc(100% - 28px);
+  padding: 7px 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(25, 25, 25, 0.74);
+  backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Organiza o conteúdo abaixo da foto e mantém o espaço interno. */
+.student-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px;
+}
+
+/* Mantém a fonte e as medidas do nome no card de modelos. */
+.student-name {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1.42rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+/* Mantém a cor e o tamanho do título profissional no card de modelos. */
+.student-title {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+/* Organiza a etiqueta com a área do estudante. */
+.student-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* Organiza a etiqueta com a área do estudante. */
+.student-meta span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #555555;
+  background: var(--surface-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+/* Alinha o texto e a seta para abrir o currículo. */
+.student-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+/* Alinha o texto e a seta para abrir o currículo. */
+.student-cta svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+  transition: transform var(--transition);
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.student-link:hover .student-cta svg {
+  transform: translateX(4px);
+}
+
+/* Mantém o aviso apresentado quando a busca não encontra estudantes. */
+.message {
+  display: none;
+  padding: 34px 22px;
+  border: 1px dashed #c9c6c3;
+  border-radius: var(--radius-md);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.60);
+  text-align: center;
+}
+
+/* Exibe o aviso quando o JavaScript adiciona a classe is-visible. */
+.message.is-visible {
+  display: block;
+}
+
+/* Mantém o aviso apresentado quando a busca não encontra estudantes. */
+.message strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Mantém o aviso apresentado quando são usados dados de demonstração. */
+.data-warning {
+  display: none;
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-left: 4px solid #b7791f;
+  border-radius: 8px;
+  color: #60420f;
+  background: #fff8e5;
+  font-size: 0.88rem;
+}
+
+/* Exibe o aviso quando o JavaScript adiciona a classe is-visible. */
+.data-warning.is-visible {
+  display: block;
+}
+
+/* Mostra o foco para quem usa o teclado e mantém a indicação de interação. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Em telas de até 900 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 900px) {
+  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  .carousel-track {
+    grid-auto-columns: minmax(260px, 46%);
+  }
+
+}
+
+/* Em telas de até 680 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 680px) {
+  /* Mantém a apresentação da página de modelos com suas medidas originais. */
+  .hero {
+    padding-top: 24px;
+  }
+
+  /* Mantém o painel de apresentação e sua decoração. */
+  .hero-panel {
+    min-height: 0;
+    border-radius: 22px;
+  }
+
+  /* Alinha a apresentação da seção e os controles do carrossel. */
+  .section-heading {
+    align-items: start;
+  }
+
+  /* Alinha os botões de rolagem do carrossel de modelos. */
+  .carousel-actions {
+    display: none;
+  }
+
+  /* Alinha a busca e a quantidade de resultados com o fundo original. */
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  /* Mantém a apresentação da quantidade de resultados encontrados. */
+  .results-status {
+    padding-left: 2px;
+    white-space: normal;
+  }
+
+  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  .carousel-track {
+    grid-auto-columns: minmax(250px, 86%);
+  }
+
+}
+
+/* Em telas de até 420 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 420px) {
+  /* Limita a largura e centraliza o conteúdo da página de modelos. */
+  .container {
+    width: min(calc(100% - 22px), var(--container));
+  }
+
+  /* Mantém o painel de apresentação e sua decoração. */
+  .hero-panel {
+    padding: 28px 22px;
+  }
+
+  /* Mantém a apresentação da página de modelos com suas medidas originais. */
+  .hero h1 {
+    font-size: clamp(2.15rem, 15vw, 3.4rem);
+  }
+
+  /* Mantém o formato e as transições dos botões da página de modelos. */
+  .button {
+    width: 100%;
+  }
+
+  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  .carousel-track {
+    grid-auto-columns: 92%;
+    gap: 14px;
+  }
+
+  /* Mantém o card inteiro clicável com sua borda, sombra e altura. */
+  .student-link {
+    min-height: 410px;
+  }
+
+}
+
+/* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
+@media (prefers-reduced-motion: reduce) {
+  /* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}
+

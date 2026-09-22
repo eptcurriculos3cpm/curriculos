@@ -1,6 +1,7 @@
 "use strict";
 
 (() => {
+  // Guarda os elementos do HTML que serão preenchidos ou controlados pelo JavaScript.
   const elementos = {
     carregamento: document.getElementById("estado-carregamento"),
     erro: document.getElementById("estado-erro"),
@@ -10,20 +11,27 @@
     anterior: document.getElementById("anterior"),
     proximo: document.getElementById("proximo")
   };
+  // Guarda os cards criados e a posição do estudante que aparece na tela.
   let slides = [];
   let slideAtual = 0;
 
+  // Usa o texto do JSON quando está preenchido; caso contrário, usa o texto de apoio.
   function texto(valor, fallback = "") {
     return typeof valor === "string" && valor.trim() ? valor.trim() : fallback;
   }
 
+  // Desenha um avatar com iniciais caso a foto não exista ou não carregue.
   function avatarPadrao(nome) {
-    const iniciais = texto(nome, "CV").split(/\s+/).slice(0, 2)
-      .map((parte) => parte.charAt(0).toUpperCase()).join("");
+    const partes = texto(nome, "CV").split(/\s+/);
+    let iniciais = "";
+    for (const parte of partes.slice(0, 2)) {
+      iniciais += parte.charAt(0).toUpperCase();
+    }
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1565c0"/><circle cx="200" cy="150" r="78" fill="#fff" opacity=".15"/><path d="M55 400c18-110 72-165 145-165s127 55 145 165" fill="#fff" opacity=".15"/><text x="200" y="235" text-anchor="middle" fill="#fff" font-family="Arial" font-size="90" font-weight="700">${iniciais}</text></svg>`;
     return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
   }
 
+  // Cria um elemento com classe e texto, sem interpretar o conteúdo como HTML.
   function criar(tag, classe, conteudo) {
     const elemento = document.createElement(tag);
     if (classe) elemento.className = classe;
@@ -31,12 +39,14 @@
     return elemento;
   }
 
+  // Monta cada grupo de informações com um título e seu conteúdo.
   function criarBloco(titulo, conteudo) {
     const bloco = criar("div", "bloco");
     bloco.append(criar("h3", "", titulo), conteudo);
     return bloco;
   }
 
+  // Monta o card do estudante sem mudar a organização visual do carrossel.
   function criarSlide(aluno, indice, total) {
     const nome = texto(aluno.nome, "Estudante");
     const slide = criar("article", "slide");
@@ -46,14 +56,18 @@
     const foto = criar("img", "foto-aluno");
     const detalhes = criar("div", "detalhes");
     const grade = criar("div", "grade-informacoes");
+    // O resumo mostra a primeira formação e até quatro competências.
     const formacao = Array.isArray(aluno.formacao) ? aluno.formacao[0] : null;
     const competencias = Array.isArray(aluno.competencias) ? aluno.competencias : [];
 
+    // Estes nomes ajudam quem navega usando um leitor de tela.
     slide.setAttribute("aria-label", `Currículo ${indice + 1} de ${total}`);
     slide.setAttribute("aria-hidden", String(indice !== 0));
+    // O ID vai na URL para a outra página saber qual currículo deve carregar.
     link.href = `curriculo-aluno.html?id=${encodeURIComponent(aluno.id)}`;
     link.setAttribute("aria-label", `Abrir currículo de ${nome}`);
 
+    // A foto continua relativa ao HTML da raiz, mesmo com o JSON na pasta data.
     const fotoFallback = avatarPadrao(nome);
     foto.src = texto(aluno.foto, fotoFallback);
     foto.alt = `Foto de ${nome}`;
@@ -69,9 +83,11 @@
     grade.append(criarBloco("Turma e área", criar("p", "", [texto(aluno.turma), texto(aluno.area)].filter(Boolean).join(" — "))));
 
     const habilidades = criar("div", "habilidades");
+    // Percorre apenas as quatro primeiras competências, como no catálogo original.
     competencias.slice(0, 4).forEach((competencia) => {
       if (texto(competencia?.nome)) habilidades.append(criar("span", "", competencia.nome));
     });
+    // Só mostra o bloco quando há informações para exibir.
     if (habilidades.children.length) grade.append(criarBloco("Competências", habilidades));
 
     const cidade = texto(aluno.contato?.cidade);
@@ -84,6 +100,7 @@
     return slide;
   }
 
+  // Cada bolinha é um botão que permite escolher diretamente um estudante.
   function criarIndicador(aluno, indice) {
     const indicador = criar("button", "indicador");
     indicador.type = "button";
@@ -96,11 +113,18 @@
     return indicador;
   }
 
+  // Move a trilha e marca qual card e qual indicador estão ativos.
   function mostrarSlide(indice) {
     if (!slides.length) return;
+    // O resto da divisão faz a navegação voltar ao início depois do último card.
     slideAtual = (indice + slides.length) % slides.length;
     elementos.trilha.style.transform = `translateX(-${slideAtual * 100}%)`;
-    slides.forEach((slide, i) => slide.setAttribute("aria-hidden", String(i !== slideAtual)));
+    slides.forEach((slide, i) => {
+      const visivel = i === slideAtual;
+      slide.setAttribute("aria-hidden", String(!visivel));
+      // Impede que Tab alcance um link de currículo que está fora da tela.
+      slide.inert = !visivel;
+    });
     [...elementos.indicadores.children].forEach((indicador, i) => {
       indicador.classList.toggle("ativo", i === slideAtual);
       if (i === slideAtual) indicador.setAttribute("aria-current", "true");
@@ -108,22 +132,30 @@
     });
   }
 
+  // Busca os dados dos alunos no arquivo JSON, sem precisar de uma API.
   async function carregar() {
     try {
-      const resposta = await fetch("alunos-dados.json");
+      // fetch usa o endereço da página HTML como base para este caminho relativo.
+      const resposta = await fetch("data/alunos-dados.json");
       if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+      // Converte o JSON recebido em um objeto que o JavaScript consegue consultar.
       const dados = await resposta.json();
       if (!Array.isArray(dados.alunos)) throw new TypeError('O JSON não contém o array "alunos".');
+      // Alunos com ativo: false ou sem ID continuam fora da listagem.
       const alunos = dados.alunos.filter((aluno) => aluno && aluno.ativo !== false && aluno.id);
       if (!alunos.length) throw new Error("Nenhum estudante ativo encontrado.");
 
+      // Cria um card e um indicador para cada estudante ativo.
       slides = alunos.map((aluno, indice) => criarSlide(aluno, indice, alunos.length));
       elementos.trilha.replaceChildren(...slides);
       elementos.indicadores.replaceChildren(...alunos.map(criarIndicador));
       elementos.carregamento.hidden = true;
       elementos.carrossel.hidden = false;
+      mostrarSlide(0);
+      // Não há para onde avançar quando existe somente um estudante.
       elementos.anterior.disabled = alunos.length < 2;
       elementos.proximo.disabled = alunos.length < 2;
+    // Se a busca falhar, troca o aviso de carregamento pela mensagem de erro.
     } catch (erro) {
       console.error("[Ver Currículos] Falha ao carregar estudantes:", erro);
       elementos.carregamento.hidden = true;
@@ -131,6 +163,7 @@
     }
   }
 
+  // Os botões e as setas do teclado compartilham a mesma função de navegação.
   elementos.anterior.addEventListener("click", () => mostrarSlide(slideAtual - 1));
   elementos.proximo.addEventListener("click", () => mostrarSlide(slideAtual + 1));
   elementos.carrossel.addEventListener("keydown", (evento) => {

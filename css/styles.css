@@ -1,0 +1,178 @@
+/* Estilos gerais e componentes usados nas páginas principais. Mantemos os padrões do navegador que já faziam parte do visual. */
+
+/* Define a fonte, o fundo e a cor do texto da página. */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #ffffffd0;
+  color: #1b1b1b;
+  transition: background-color .3s, color .3s;
+  overflow-x: hidden;
+}
+
+/* Mantém as cores, os espaços e o arredondamento do botão principal. */
+.botao-criar-curriculo,
+.botao-criar-curriculo:visited {
+  display: inline-block;
+  background: #043175;
+  color: rgb(250, 250, 250);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Mantém o espaço interno das seções do site. */
+section {
+  padding: 40px;
+}
+
+/* Mantém a borda, o arredondamento e o tamanho mínimo dos campos. */
+input,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 100px;
+}
+
+/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+.card {
+  width: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  transition: .3s;
+  gap: 15px;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+.card h3 {
+  color: #043175;
+}
+
+/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+.card p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  background: #043175;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+.card a:hover {
+  background: #1565c0;
+}
+
+/* Mantém a transição dos botões ao interagir com eles. */
+button {
+  transition: .3s;
+}
+
+/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+button:hover {
+  transform: translateY(-3px);
+}
+
+/* Define a cor e o tamanho dos títulos principais. */
+h1 {
+  color: #043175;
+  font-size: 42px;
+}
+
+/* Define a cor e a separação dos títulos de seção. */
+h2 {
+  color: #043175;
+  margin-bottom: 25px;
+}
+
+/* Organiza os cards lado a lado e permite a quebra de linha. */
+.cards {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode {
+  background: #212121;
+  color: #f5f5f5;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode .card {
+  background: #2b2b2b;
+  color: #f5f5f5;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .card h3,
+body.dark-mode .card p {
+  color: #f5f5f5;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #1f2937;
+  color: #dad4d4d0;
+  border-color: #555;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode button,
+body.dark-mode .card a {
+  background: #374151;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode .card a:hover {
+  background: #62a294;
+}
+
+/* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 760px) {
+  /* Mantém o espaço interno das seções do site. */
+  section {
+    padding: 28px 16px;
+  }
+
+  /* Define a cor e o tamanho dos títulos principais. */
+  h1 {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  /* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+  .card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum CPM</title>
-  <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/site-chrome.css">
+  <link rel="stylesheet" href="css/curriculo.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+  <body class="pagina-padrao">
     <header>
-      <nav>
+      <nav aria-label="Navegação principal">
         <div class="logo">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&s">
+          <img src="logo3cpm.png" alt="Logo do 3º CPM">
           <p>Curriculum CPM</p>
         </div>
 
         <div class="menu">
           <a href="index.html">Início</a>
-          <a class="ativo" href="curriculo.html">Criar Currículo</a>
+          <a class="ativo" href="curriculo.html" aria-current="page">Criar Currículo</a>
           <a href="vercurriculos.html">Ver Currículos</a>
           <a href="vagas.html">Ver Vagas</a>
           <a href="certificados.html">Certificados</a>
@@ -129,8 +132,8 @@
       <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
       <span class="theme-icon" aria-hidden="true">🌙</span>
     </button>
-    <button class="chatbot"></button>
-    <script src="chatbot.js"></script>
-    <script src="main.js"></script>
+    <button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,34 @@
+/* Estilos das áreas de vagas e de cursos e certificados. */
+
+/* Organiza as vagas com espaço entre os cards e quebra de linha. */
+.vagas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Mantém a faixa de cursos com as cores e o alinhamento originais. */
+.certificados {
+  background: #043175;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+body.dark-mode .certificados {
+  background: #111827;
+}
+
+/* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
+@media (max-width: 760px) {
+  /* Mantém a faixa de cursos com as cores e o alinhamento originais. */
+  .vagas,
+  .certificados {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+}
+
