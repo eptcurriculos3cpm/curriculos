@@ -1,5 +1,7 @@
+// Ativa verificações do JavaScript para ajudar a detectar erros de programação.
 "use strict";
 
+// Executa o código da página mantendo suas variáveis separadas dos outros scripts.
 (() => {
   // Reúne as áreas do HTML para preencher o currículo do estudante escolhido.
   const elementos = {
@@ -49,10 +51,12 @@
   function avatarPadrao(nome) {
     const partes = nome.split(/\s+/).filter(Boolean);
     let iniciais = "";
+    // Pega a primeira letra dos dois primeiros nomes para montar as iniciais do avatar.
     for (const parte of partes.slice(0, 2)) {
       iniciais += parte.charAt(0).toUpperCase();
     }
     if (!iniciais) iniciais = "CV";
+    // Descreve o desenho do avatar em SVG, um formato de imagem feito com texto.
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1565c0"/><circle cx="200" cy="145" r="78" fill="#fff" opacity=".16"/><path d="M55 400c18-110 72-165 145-165s127 55 145 165" fill="#fff" opacity=".16"/><text x="200" y="235" text-anchor="middle" fill="#fff" font-family="Arial" font-size="90" font-weight="700">${iniciais}</text></svg>`;
     return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
   }
@@ -64,6 +68,7 @@
     const rotuloElemento = criar("span", "rotulo-contato", rotulo);
     const conteudo = href ? document.createElement("a") : document.createElement("span");
     conteudo.textContent = valor.trim();
+    // Transforma o contato em um link quando foi recebido um endereço.
     if (href) {
       conteudo.href = href;
       // Os perfis externos abrem em outra aba sem acesso à página de origem.
@@ -125,6 +130,7 @@
   // Monta listas de atividades e tecnologias; sem itens, não cria uma lista vazia.
   function criarLista(valores, classe) {
     const itens = [];
+    // Cria um item da lista para cada texto preenchido, ignorando os valores vazios.
     for (const valor of obterLista(valores)) {
       if (temTexto(valor)) itens.push(criar("li", "", valor));
     }
@@ -165,6 +171,7 @@
       const item = criar("li", "item-conteudo");
       item.append(criar("h3", "", projeto.nome));
       if (temTexto(projeto.descricao)) item.append(criar("p", "descricao", projeto.descricao));
+      // Só cria o link de visita quando o projeto tem um endereço preenchido.
       if (temTexto(projeto.url)) {
         const link = criar("a", "link-projeto", "Visitar projeto");
         link.href = projeto.url.trim();
@@ -186,6 +193,7 @@
     const turmaArea = [aluno.turma, aluno.area].filter(temTexto).map((valor) => valor.trim()).join(" • ");
     const fallback = avatarPadrao(nome);
 
+    // Preenche a identificação e esconde os campos opcionais que não têm informação.
     elementos.nome.textContent = nome;
     elementos.titulo.textContent = titulo;
     elementos.titulo.hidden = !titulo;
@@ -197,8 +205,10 @@
     // O caminho fotos/ continua relativo ao HTML na raiz, não à pasta do JSON.
     elementos.foto.src = temTexto(aluno.foto) ? aluno.foto.trim() : fallback;
     elementos.foto.alt = `Foto de ${nome}`;
+    // Se a imagem não carregar, troca pela ilustração com as iniciais uma única vez.
     elementos.foto.addEventListener("error", () => { elementos.foto.src = fallback; }, { once: true });
 
+    // Distribui os dados do estudante entre as funções que montam cada seção.
     preencherContato(aluno.contato);
     preencherCompetencias(aluno.competencias);
     preencherFormacoes(aluno.formacao);
@@ -224,11 +234,13 @@
   async function iniciar() {
     // URLSearchParams lê a parte ?id=... do endereço da página.
     const id = new URLSearchParams(window.location.search).get("id")?.trim();
+    // Interrompe o carregamento e orienta a escolher um estudante se o endereço estiver sem ID.
     if (!id) {
       mostrarErro("Selecione um estudante na página Ver Currículos.");
       return;
     }
 
+    // Tenta carregar o currículo; qualquer erro deste trecho será tratado no catch abaixo.
     try {
       // Aguarda o arquivo local; uma resposta HTTP com erro vai para o catch.
       const resposta = await fetch("data/alunos-dados.json");
@@ -238,13 +250,16 @@
       if (!Array.isArray(dados.alunos)) throw new TypeError('O JSON não contém o array "alunos".');
       // Um ID inexistente ou um aluno com ativo: false não abre o currículo.
       const aluno = dados.alunos.find((item) => item && item.id === id && item.ativo !== false);
+      // Mostra um aviso quando o ID não corresponde a um estudante disponível.
       if (!aluno) {
         mostrarErro("O estudante solicitado não existe ou não está disponível.");
         return;
       }
+      // Monta o currículo e troca a tela de carregamento pela página preenchida.
       preencher(aluno);
       elementos.carregamento.hidden = true;
       elementos.pagina.hidden = false;
+    // Apresenta uma orientação na página se a leitura dos dados falhar.
     } catch (erro) {
       mostrarErro("Não foi possível carregar os dados. Abra o projeto com o Live Server e tente novamente.", erro);
     }
@@ -252,5 +267,6 @@
 
   // O navegador oferece a impressão ou a opção de salvar o currículo como PDF.
   elementos.imprimir.addEventListener("click", () => window.print());
+  // Inicia a busca dos dados assim que este script é executado.
   iniciar();
 })();

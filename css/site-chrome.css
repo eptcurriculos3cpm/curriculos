@@ -31,12 +31,12 @@
   height: 60px;
 }
 
-/* Mantém os detalhes próprios desta versão do componente. */
+/* Arredonda a imagem da logomarca até formar um círculo. */
 .pagina-padrao .logo img {
   border-radius: 100%;
 }
 
-/* Alinha a logomarca e o nome do site com os tamanhos originais. */
+/* Destaca o nome do site com texto branco, maior e em negrito. */
 .pagina-padrao .logo p {
   color: white;
   font-size: 22px;
@@ -58,7 +58,7 @@
   border-radius: 15px;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca o fundo. */
 .pagina-padrao .menu a:hover {
   background: #62a294;
 }
@@ -86,13 +86,13 @@
   gap: 40px;
 }
 
-/* Distribui as colunas de informações, links e contato no rodapé. */
+/* Limita a largura de cada coluna do rodapé a 300 pixels. */
 .pagina-padrao .footer-container div,
 .site-footer-standard .footer-container div {
   max-width: 300px;
 }
 
-/* Distribui as colunas de informações, links e contato no rodapé. */
+/* Deixa espaço abaixo dos títulos das colunas do rodapé. */
 .pagina-padrao .footer-container h3 {
   margin-bottom: 15px;
 }
@@ -111,13 +111,13 @@
   margin-bottom: 10px;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca a cor do texto. */
 .pagina-padrao .footer-links a:hover,
 .site-footer-standard .footer-links a:hover {
   color: #62a294;
 }
 
-/* Mantém as cores e o espaço do rodapé. */
+/* Desenha uma linha fina e semitransparente para separar o conteúdo do rodapé. */
 .pagina-padrao footer hr {
   border: none;
   height: 1px;
@@ -151,7 +151,7 @@
   box-shadow: 0 5px 15px rgba(0,0,0,.2);
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima. */
 .pagina-padrao .theme-toggle:hover {
   transform: translateY(-3px);
 }
@@ -184,35 +184,35 @@
   transition: left .3s, background-color .3s;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.pagina-padrao.dark-mode nav,
 body.pagina-padrao.dark-mode footer {
   background: #111827;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.pagina-padrao.dark-mode .menu a {
   background: #374151;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. O seletor :hover vale ao passar o mouse. */
 body.pagina-padrao.dark-mode .menu a:hover,
 body.pagina-padrao.dark-mode .menu a.ativo {
   background: #62a294;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.pagina-padrao.dark-mode .theme-toggle {
   background: #f5f5f5;
   color: #111827;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.pagina-padrao.dark-mode .theme-track {
   background: #4d4d4d;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a posição da bolinha do tema dos elementos selecionados. */
 body.pagina-padrao.dark-mode .theme-thumb {
   left: 22px;
   background: #111827;
@@ -220,7 +220,7 @@ body.pagina-padrao.dark-mode .theme-thumb {
 
 /* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 760px) {
-  /* Alinha a logo e os links dentro da faixa de navegação. */
+  /* Empilha a logomarca e o menu, ajustando o alinhamento para a tela menor. */
   .pagina-padrao nav {
     align-items: stretch;
     flex-direction: column;
@@ -234,20 +234,20 @@ body.pagina-padrao.dark-mode .theme-thumb {
     gap: 12px;
   }
 
-  /* Alinha a logomarca e o nome do site com os tamanhos originais. */
+  /* Reduz a logomarca para 48 pixels e impede que ela encolha além disso. */
   .pagina-padrao .logo img {
     width: 48px;
     height: 48px;
     flex: 0 0 auto;
   }
 
-  /* Alinha a logomarca e o nome do site com os tamanhos originais. */
+  /* Retira a margem do nome do site e reduz a fonte em telas menores. */
   .pagina-padrao .logo p {
     margin: 0;
     font-size: 20px;
   }
 
-  /* Organiza os links do menu e mantém a aparência da navegação. */
+  /* Divide o menu em duas colunas de mesma largura, com espaço entre os links. */
   .pagina-padrao .menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -274,13 +274,13 @@ body.pagina-padrao.dark-mode .theme-thumb {
     padding: 32px 20px;
   }
 
-  /* Distribui as colunas de informações, links e contato no rodapé. */
+  /* Faz cada coluna do rodapé ocupar toda a largura disponível em telas menores. */
   .pagina-padrao .footer-container div {
     width: 100%;
     max-width: none;
   }
 
-  /* Mantém as cores e o espaço do rodapé. */
+  /* Reduz as margens laterais da linha do rodapé em telas pequenas. */
   .pagina-padrao footer hr {
     margin: 0 20px;
   }
@@ -326,7 +326,7 @@ body.pagina-padrao.dark-mode .theme-thumb {
   transition: transform .2s ease;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* Troca as variáveis de cores usadas pelos componentes quando o modo escuro está ativo. */
 body.pagina-complementar.dark-mode {
   --fundo: #111827;
   --branco: #1f2937;
@@ -341,19 +341,19 @@ body.pagina-complementar.dark-mode {
   --line: #475569;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto, a cor da borda dos elementos selecionados. */
 body.pagina-complementar.dark-mode .theme-toggle {
   color: #f8fafc;
   background: #1f2937;
   border-color: #475569;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.pagina-complementar.dark-mode .theme-track {
   background: #1565c0;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta a posição da bolinha do tema dos elementos selecionados. */
 body.pagina-complementar.dark-mode .theme-thumb {
   transform: translateX(14px);
 }
@@ -420,7 +420,7 @@ header.site-chrome {
   gap: 12px;
 }
 
-/* Mantém a transição dos botões ao interagir com eles. */
+/* Dá aos links e botões do menu fundo azul, texto branco e cantos arredondados. */
 .site-chrome .menu a,
 .site-chrome .menu button {
   padding: 10px 15px;
@@ -433,7 +433,7 @@ header.site-chrome {
   cursor: pointer;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca o fundo. */
 .site-chrome .menu a:hover,
 .site-chrome .menu a.ativo,
 .site-chrome .menu button:hover {
@@ -447,12 +447,12 @@ header.site-chrome {
   background: #043175;
 }
 
-/* Mantém as cores e o espaço do rodapé. */
+/* Remove a margem superior e deixa espaço abaixo dos títulos do rodapé. */
 .site-footer-standard h3 {
   margin: 0 0 15px;
 }
 
-/* Mantém as cores e o espaço do rodapé. */
+/* Separa os parágrafos do rodapé com uma margem inferior. */
 .site-footer-standard p {
   margin: 0 0 10px;
 }
@@ -464,7 +464,7 @@ header.site-chrome {
   text-decoration: none;
 }
 
-/* Mantém as cores e o espaço do rodapé. */
+/* Cria uma linha fina e semitransparente com espaço nas laterais do rodapé. */
 .site-footer-standard hr {
   height: 1px;
   margin: 0 40px;
@@ -472,20 +472,20 @@ header.site-chrome {
   background: rgba(255,255,255,.3);
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.pagina-complementar.dark-mode {
   color: #e5e7eb;
   background: #1c1c1c;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.pagina-complementar.dark-mode .site-footer-standard {
   background: #061b42;
 }
 
 /* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 760px) {
-  /* Alinha a logo e os links dentro da faixa de navegação. */
+  /* Empilha a logomarca e o menu, ajustando o alinhamento para a tela menor. */
   .site-chrome nav {
     align-items: stretch;
     flex-direction: column;
@@ -507,7 +507,7 @@ body.pagina-complementar.dark-mode .site-footer-standard {
     flex: 0 0 auto;
   }
 
-  /* Organiza os links do menu e mantém a aparência da navegação. */
+  /* Divide o menu em duas colunas de mesma largura, com espaço entre os links. */
   .site-chrome .menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -515,7 +515,7 @@ body.pagina-complementar.dark-mode .site-footer-standard {
     width: 100%;
   }
 
-  /* Mantém a transição dos botões ao interagir com eles. */
+  /* Centraliza os textos do menu e permite quebrar palavras longas em telas pequenas. */
   .site-chrome .menu a,
   .site-chrome .menu button {
     min-width: 0;
@@ -535,13 +535,13 @@ body.pagina-complementar.dark-mode .site-footer-standard {
     padding: 32px 20px;
   }
 
-  /* Distribui as colunas de informações, links e contato no rodapé. */
+  /* Faz cada coluna do rodapé ocupar toda a largura disponível em telas menores. */
   .site-footer-standard .footer-container div {
     width: 100%;
     max-width: none;
   }
 
-  /* Mantém as cores e o espaço do rodapé. */
+  /* Reduz as margens laterais da linha do rodapé em telas pequenas. */
   .site-footer-standard hr {
     margin: 0 20px;
   }

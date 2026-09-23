@@ -30,7 +30,7 @@ main {
   text-align: center;
 }
 
-/* Centraliza a apresentação do catálogo e mantém seus espaçamentos. */
+/* Destaca a identificação do catálogo com letras maiúsculas, azuis e espaçadas. */
 .cabecalho-pagina span {
   color: var(--azul);
   font-size: .82rem;
@@ -46,7 +46,7 @@ h1 {
   line-height: 1.08;
 }
 
-/* Centraliza a apresentação do catálogo e mantém seus espaçamentos. */
+/* Formata a descrição do catálogo com cor suave e espaço entre as linhas. */
 .cabecalho-pagina p {
   margin: 0;
   color: var(--texto-suave);
@@ -154,7 +154,7 @@ h1 {
   gap: 20px;
 }
 
-/* Mantém os títulos e textos de cada informação do card. */
+/* Destaca os títulos das informações com fonte serifada e cor azul. */
 .bloco h3 {
   margin: 0 0 9px;
   color: var(--azul-escuro);
@@ -162,7 +162,7 @@ h1 {
   font-size: 1.06rem;
 }
 
-/* Mantém os títulos e textos de cada informação do card. */
+/* Formata os textos das informações com cor suave e espaço entre as linhas. */
 .bloco p {
   margin: 0;
   color: var(--texto-suave);
@@ -177,7 +177,7 @@ h1 {
   gap: 7px;
 }
 
-/* Organiza as etiquetas de competências e permite a quebra de linha. */
+/* Desenha cada competência como uma etiqueta de fundo claro e cantos arredondados. */
 .habilidades span {
   padding: 7px 10px;
   border-radius: 999px;
@@ -274,7 +274,7 @@ h1 {
   text-align: center;
 }
 
-/* Mantém os avisos de carregamento e de erro com o mesmo formato. */
+/* Destaca o título do aviso em uma linha própria, separado da explicação. */
 .estado strong {
   display: block;
   margin-bottom: 7px;
@@ -296,7 +296,7 @@ h1 {
 
 /* Em telas de até 850 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 850px) {
-  /* Organiza a foto e os dados nas colunas originais do card. */
+  /* Organiza o conteúdo em uma única coluna para caber na tela menor. */
   .resumo-curriculo {
     grid-template-columns: 1fr;
   }
@@ -344,7 +344,7 @@ h1 {
     margin: 0 auto 16px;
   }
 
-  /* Organiza os blocos de informações nas duas colunas originais. */
+  /* Organiza o conteúdo em uma única coluna para caber na tela menor. */
   .grade-informacoes {
     grid-template-columns: 1fr;
   }
@@ -377,7 +377,7 @@ h1 {
 
 /* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
 @media (prefers-reduced-motion: reduce) {
-  /* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+  /* Retira a rolagem suave e reduz a duração dos efeitos para quem prefere menos movimento. */
   *,
   *::before,
   *::after {

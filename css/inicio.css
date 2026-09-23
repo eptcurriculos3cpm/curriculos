@@ -38,12 +38,12 @@
   transition: .3s;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima. */
 .noticia:hover {
   transform: translateY(-5px);
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.dark-mode .apresentacao,
 body.dark-mode .novidades article,
 body.dark-mode .noticia {
@@ -51,7 +51,7 @@ body.dark-mode .noticia {
   color: #f5f5f5;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta a cor do texto dos elementos selecionados. */
 body.dark-mode .noticia p {
   color: #f5f5f5;
 }

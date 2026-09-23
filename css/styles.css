@@ -54,24 +54,24 @@ textarea {
   gap: 15px;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima e destaca a sombra. */
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0,0,0,.2);
 }
 
-/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+/* Colore de azul o título de cada cartão. */
 .card h3 {
   color: #043175;
 }
 
-/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+/* Usa texto cinza e aumenta o espaço entre as linhas dos parágrafos dos cartões. */
 .card p {
   color: #555;
   line-height: 1.5;
 }
 
-/* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+/* Dá ao link do cartão a aparência de botão, com fundo azul e cantos arredondados. */
 .card a {
   display: inline-block;
   margin-top: 15px;
@@ -82,7 +82,7 @@ textarea {
   border-radius: 10px;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca o fundo. */
 .card a:hover {
   background: #1565c0;
 }
@@ -92,7 +92,7 @@ button {
   transition: .3s;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima. */
 button:hover {
   transform: translateY(-3px);
 }
@@ -117,19 +117,19 @@ h2 {
   justify-content: center;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.dark-mode {
   background: #212121;
   color: #f5f5f5;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.dark-mode .card {
   background: #2b2b2b;
   color: #f5f5f5;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta a cor do texto dos elementos selecionados. */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode .card h3,
@@ -137,7 +137,7 @@ body.dark-mode .card p {
   color: #f5f5f5;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto, a cor da borda dos elementos selecionados. */
 body.dark-mode input,
 body.dark-mode textarea {
   background: #1f2937;
@@ -145,13 +145,13 @@ body.dark-mode textarea {
   border-color: #555;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.dark-mode button,
 body.dark-mode .card a {
   background: #374151;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. O seletor :hover vale ao passar o mouse. */
 body.dark-mode .card a:hover {
   background: #62a294;
 }
@@ -168,7 +168,7 @@ body.dark-mode .card a:hover {
     font-size: clamp(32px, 10vw, 42px);
   }
 
-  /* Define o tamanho e a aparência dos cards compartilhados entre páginas. */
+  /* Faz o cartão ocupar toda a largura disponível, incluindo borda e preenchimento na medida. */
   .card {
     width: 100%;
     box-sizing: border-box;

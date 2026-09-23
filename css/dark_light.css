@@ -8,7 +8,7 @@
   font-family: 'Outif', sans-serif;
 }
 
-/* Define a fonte, o fundo e a cor do texto da página. */
+/* Centraliza o conteúdo na tela com Flexbox e aplica fundo escuro e transição suave. */
 body {
   height: 100vh;
   display: flex;
@@ -18,7 +18,7 @@ body {
   transition: .5s;
 }
 
-/* Define a cor e o tamanho dos títulos principais. */
+/* Deixa o título branco para aparecer sobre o fundo escuro. */
 h1 {
   color: white;
 }

@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 
-/* Define o fundo ou a rolagem do documento inteiro. */
+/* Aplica ao documento a cor de fundo guardada na variável --fundo. */
 html {
   background: var(--fundo);
 }
@@ -87,7 +87,7 @@ nav {
   box-shadow: 0 18px 55px rgba(4,49,117,.18);
 }
 
-/* Organiza o conteúdo do currículo e mantém suas medidas. */
+/* Divide a folha em duas colunas: 34% para o painel lateral e 66% para o conteúdo principal. */
 .curriculo {
   display: grid;
   min-height: 297mm;
@@ -134,7 +134,7 @@ nav {
   color: var(--branco);
 }
 
-/* Organiza as tecnologias em etiquetas que podem quebrar a linha. */
+/* Remove as margens, os recuos e os marcadores padrão das listas do currículo. */
 .lista-contato,
 .lista-competencias,
 .lista-conteudo,
@@ -163,14 +163,14 @@ nav {
   text-transform: uppercase;
 }
 
-/* Mantém o espaço e o tamanho do texto de cada contato. */
+/* Permite quebrar contatos longos em mais de uma linha e remove o sublinhado dos links. */
 .item-contato a,
 .item-contato span {
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, sublinha o link. */
 .item-contato a:hover {
   text-decoration: underline;
 }
@@ -217,7 +217,7 @@ nav {
   text-transform: uppercase;
 }
 
-/* Separa o nome e o título profissional do restante do currículo. */
+/* Destaca o nome com fonte maior e permite quebrar nomes longos para caber na folha. */
 .identificacao h1 {
   margin: 0;
   overflow-wrap: anywhere;
@@ -250,7 +250,7 @@ nav {
   color: var(--azul-escuro);
 }
 
-/* Organiza os títulos e a separação das seções de conteúdo. */
+/* Desenha uma linha que ocupa o espaço restante ao lado do título da seção. */
 .secao-principal h2::after {
   height: 1px;
   flex: 1;
@@ -258,7 +258,7 @@ nav {
   background: var(--linha);
 }
 
-/* Organiza os títulos e a separação das seções de conteúdo. */
+/* Retira a margem e aplica uma cor suave aos parágrafos diretamente dentro da seção. */
 .secao-principal > p {
   margin: 0;
   color: var(--texto-suave);
@@ -270,7 +270,7 @@ nav {
   padding-left: 20px;
 }
 
-/* Mantém o recuo e os marcadores dos itens do currículo. */
+/* Cria uma bolinha verde antes de cada item de formação, experiência ou projeto. */
 .item-conteudo::before {
   position: absolute;
   top: 7px;
@@ -282,26 +282,26 @@ nav {
   content: "";
 }
 
-/* Mantém o recuo e os marcadores dos itens do currículo. */
+/* Acrescenta espaço entre um item de conteúdo e o seguinte. */
 .item-conteudo + .item-conteudo {
   margin-top: 25px;
 }
 
-/* Mantém o recuo e os marcadores dos itens do currículo. */
+/* Destaca o título de cada item com texto azul e sem margem. */
 .item-conteudo h3 {
   margin: 0;
   color: var(--azul-escuro);
   font-size: 1rem;
 }
 
-/* Destaca os dados de instituição e empresa dentro de cada item. */
+/* Deixa um pequeno espaço acima da instituição, do período e da descrição. */
 .subtitulo,
 .periodo,
 .descricao {
   margin: 4px 0 0;
 }
 
-/* Destaca os dados de instituição e empresa dentro de cada item. */
+/* Coloca o nome da instituição ou da empresa em negrito. */
 .subtitulo {
   font-weight: 700;
 }
@@ -341,7 +341,7 @@ nav {
   margin-top: 12px;
 }
 
-/* Organiza as tecnologias em etiquetas que podem quebrar a linha. */
+/* Mostra cada tecnologia como uma etiqueta de fundo claro e cantos arredondados. */
 .lista-tecnologias li {
   padding: 4px 8px;
   border-radius: 999px;
@@ -371,19 +371,19 @@ nav {
   text-align: center;
 }
 
-/* Mantém o aviso de carregamento ou erro centralizado na página. */
+/* Destaca o título do aviso com fonte serifada e cor azul. */
 .mensagem-estado h1 {
   margin-top: 0;
   color: var(--azul-escuro);
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Mantém o aviso de carregamento ou erro centralizado na página. */
+/* Aplica uma cor suave ao texto que explica o aviso. */
 .mensagem-estado p {
   color: var(--texto-suave);
 }
 
-/* Mantém o aviso de carregamento ou erro centralizado na página. */
+/* Dá ao link do aviso aparência de botão azul com cantos arredondados. */
 .mensagem-estado a {
   display: inline-block;
   margin-top: 10px;
@@ -408,13 +408,13 @@ nav {
 
 /* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 760px) {
-  /* Alinha a logo e os links dentro da faixa de navegação. */
+  /* Empilha a logomarca e o menu, ajustando o alinhamento para a tela menor. */
   nav {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  /* Mantém a folha do currículo nas proporções usadas para impressão. */
+  /* Faz a folha ocupar a largura da tela menor, retirando margens, sombra e altura mínima. */
   .pagina-a4 {
     width: 100%;
     min-height: 0;
@@ -422,7 +422,7 @@ nav {
     box-shadow: none;
   }
 
-  /* Organiza o conteúdo do currículo e mantém suas medidas. */
+  /* Organiza o conteúdo em uma única coluna para caber na tela menor. */
   .curriculo {
     min-height: 0;
     grid-template-columns: 1fr;
@@ -464,7 +464,7 @@ nav {
 
 /* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
 @media (prefers-reduced-motion: reduce) {
-  /* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+  /* Retira a rolagem suave e reduz a duração dos efeitos para quem prefere menos movimento. */
   *,
   *::before,
   *::after {
@@ -483,7 +483,7 @@ nav {
 
 /* Prepara a impressão para mostrar somente a folha do currículo. */
 @media print {
-  /* Define a fonte, o fundo e a cor do texto da página. */
+  /* Define a largura de uma folha A4 e retira as margens na impressão. */
   html,
   body {
     width: 210mm;
@@ -496,7 +496,7 @@ nav {
     display: none !important;
   }
 
-  /* Usa a cor do texto ao redor nos links desta página. */
+  /* Prepara a folha para impressão em A4, sem sombra ou corte do conteúdo que ultrapassar a caixa. */
   #pagina-curriculo {
     display: block;
     width: 210mm;
@@ -506,18 +506,18 @@ nav {
     box-shadow: none;
   }
 
-  /* Organiza o conteúdo do currículo e mantém suas medidas. */
+  /* Garante a altura mínima de uma folha A4 na versão impressa. */
   .curriculo {
     min-height: 297mm;
   }
 
-  /* Mantém as cores e o espaço da coluna de contato e competências. */
+  /* Pede ao navegador que preserve as cores do painel lateral na impressão. */
   .painel-lateral {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
-  /* Organiza os títulos e a separação das seções da coluna lateral. */
+  /* Evita que estes blocos sejam divididos entre duas páginas na impressão. */
   .secao-lateral,
   .identificacao,
   .item-conteudo {
@@ -525,7 +525,7 @@ nav {
     page-break-inside: avoid;
   }
 
-  /* Organiza os títulos e a separação das seções de conteúdo. */
+  /* Evita deixar o título de uma seção sozinho no fim da página impressa. */
   .secao-principal h2 {
     break-after: avoid;
     page-break-after: avoid;

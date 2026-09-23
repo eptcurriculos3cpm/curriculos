@@ -1,5 +1,7 @@
+// Ativa verificações do JavaScript para ajudar a detectar erros de programação.
 "use strict";
 
+// Executa o código do catálogo sem expor suas variáveis aos outros scripts.
 (() => {
   // Guarda os elementos do HTML que serão preenchidos ou controlados pelo JavaScript.
   const elementos = {
@@ -24,9 +26,11 @@
   function avatarPadrao(nome) {
     const partes = texto(nome, "CV").split(/\s+/);
     let iniciais = "";
+    // Usa as iniciais dos dois primeiros nomes para identificar o estudante sem foto.
     for (const parte of partes.slice(0, 2)) {
       iniciais += parte.charAt(0).toUpperCase();
     }
+    // Monta a imagem de substituição em SVG, um desenho descrito com texto.
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1565c0"/><circle cx="200" cy="150" r="78" fill="#fff" opacity=".15"/><path d="M55 400c18-110 72-165 145-165s127 55 145 165" fill="#fff" opacity=".15"/><text x="200" y="235" text-anchor="middle" fill="#fff" font-family="Arial" font-size="90" font-weight="700">${iniciais}</text></svg>`;
     return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
   }
@@ -71,11 +75,13 @@
     const fotoFallback = avatarPadrao(nome);
     foto.src = texto(aluno.foto, fotoFallback);
     foto.alt = `Foto de ${nome}`;
+    // Troca uma foto que falhou pelo avatar, executando essa tentativa apenas uma vez.
     foto.addEventListener("error", () => { foto.src = fotoFallback; }, { once: true });
     perfil.append(foto, criar("h2", "nome-aluno", nome), criar("p", "titulo-aluno", texto(aluno.titulo, "Estudante")));
 
     detalhes.append(criar("p", "sobre", texto(aluno.sobre, "Conheça a trajetória e as competências deste estudante.")));
 
+    // Mostra os dados da primeira formação ou uma mensagem quando ela não foi informada.
     const formacaoTexto = criar("p", "", formacao
       ? [texto(formacao.curso), texto(formacao.instituicao), texto(formacao.periodo)].filter(Boolean).join(" — ")
       : "Formação não informada");
@@ -90,9 +96,11 @@
     // Só mostra o bloco quando há informações para exibir.
     if (habilidades.children.length) grade.append(criarBloco("Competências", habilidades));
 
+    // Lê a cidade com segurança, mesmo se o objeto de contato não existir.
     const cidade = texto(aluno.contato?.cidade);
     if (cidade) grade.append(criarBloco("Localidade", criar("p", "", cidade)));
 
+    // Junta as informações e coloca o resumo completo dentro do link do currículo.
     detalhes.append(grade, criar("span", "chamada-card", "Ver currículo completo →"));
     resumo.append(perfil, detalhes);
     link.append(resumo);
@@ -105,10 +113,12 @@
     const indicador = criar("button", "indicador");
     indicador.type = "button";
     indicador.setAttribute("aria-label", `Ver currículo de ${texto(aluno.nome, `estudante ${indice + 1}`)}`);
+    // Marca o primeiro indicador como selecionado quando os botões são criados.
     if (indice === 0) {
       indicador.classList.add("ativo");
       indicador.setAttribute("aria-current", "true");
     }
+    // Ao clicar na bolinha, abre o cartão que está na mesma posição da lista.
     indicador.addEventListener("click", () => mostrarSlide(indice));
     return indicador;
   }
@@ -119,12 +129,14 @@
     // O resto da divisão faz a navegação voltar ao início depois do último card.
     slideAtual = (indice + slides.length) % slides.length;
     elementos.trilha.style.transform = `translateX(-${slideAtual * 100}%)`;
+    // Informa aos recursos de acessibilidade qual cartão está visível agora.
     slides.forEach((slide, i) => {
       const visivel = i === slideAtual;
       slide.setAttribute("aria-hidden", String(!visivel));
       // Impede que Tab alcance um link de currículo que está fora da tela.
       slide.inert = !visivel;
     });
+    // Atualiza a cor e a indicação acessível da bolinha selecionada.
     [...elementos.indicadores.children].forEach((indicador, i) => {
       indicador.classList.toggle("ativo", i === slideAtual);
       if (i === slideAtual) indicador.setAttribute("aria-current", "true");
@@ -134,6 +146,7 @@
 
   // Busca os dados dos alunos no arquivo JSON, sem precisar de uma API.
   async function carregar() {
+    // Tenta carregar e montar o catálogo; o catch abaixo trata as falhas.
     try {
       // fetch usa o endereço da página HTML como base para este caminho relativo.
       const resposta = await fetch("data/alunos-dados.json");
@@ -170,5 +183,6 @@
     if (evento.key === "ArrowLeft") mostrarSlide(slideAtual - 1);
     if (evento.key === "ArrowRight") mostrarSlide(slideAtual + 1);
   });
+  // Inicia a leitura dos estudantes depois de configurar os controles da página.
   carregar();
 })();

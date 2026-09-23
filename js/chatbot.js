@@ -1,4 +1,6 @@
+// Executa a configuração do chat em um espaço próprio, sem misturar suas variáveis com outros arquivos.
 (function () {
+  // Ativa verificações do JavaScript que ajudam a identificar erros, como variáveis não declaradas.
   "use strict";
 
   // Reúne os textos e as respostas originais do chatbot em um único lugar.
@@ -150,6 +152,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     botaoChat.setAttribute("aria-expanded", "true");
     botaoChat.setAttribute("aria-label", "Fechar chat de atendimento");
     campoMensagem.focus({ preventScroll: true });
+    // Mostra a saudação e o menu apenas na primeira abertura da conversa.
     if (!conversaIniciada) {
       conversaIniciada = true;
       mostrarMensagem(CONFIG.greeting, mostrarMenu);
@@ -188,6 +191,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     digitando.setAttribute("aria-hidden", "true");
     digitando.innerHTML = "<span></span><span></span><span></span>";
     rolarConversa();
+    // Espera um pequeno intervalo antes de trocar as bolinhas pela resposta.
     const espera = setTimeout(() => {
       respostasPendentes.delete(espera);
       digitando.remove();
@@ -203,6 +207,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     mensagens.querySelectorAll(".cb-quick-replies").forEach((grupo) => grupo.remove());
   }
 
+  // Cria a caixa que reúne as novas opções e a coloca no histórico da conversa.
   function criarGrupoOpcoes() {
     limparOpcoes();
     const grupo = document.createElement("div");
@@ -220,6 +225,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     grupo.append(botao);
   }
 
+  // Monta os botões dos assuntos disponíveis no menu inicial.
   function mostrarMenu() {
     const grupo = criarGrupoOpcoes();
     // Cada opção usa a mesma função que recebe as mensagens digitadas.
@@ -232,9 +238,11 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
   // Procura as palavras na mesma ordem da versão original, sem mudar respostas.
   function responder(pergunta) {
     const texto = pergunta.toLowerCase();
+    // Escolhe a primeira regra que contém alguma palavra encontrada na pergunta.
     const regra = CONFIG.rules.find((item) => {
       return item.keywords.some((palavra) => texto.includes(palavra));
     });
+    // Quando nenhum assunto combina, mostra a resposta padrão e as opções para continuar.
     if (!regra) {
       mostrarMensagem(CONFIG.fallbackReply, mostrarOpcoesFinais);
       return;
@@ -245,6 +253,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
   // Depois da resposta, permite abrir o destino indicado, voltar ou finalizar.
   function mostrarOpcoesFinais(acao) {
     const grupo = criarGrupoOpcoes();
+    // Acrescenta um link para a localização do colégio, aberto em outra aba.
     if (acao === "openMaps") {
       const link = document.createElement("a");
       link.href = "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwjokOX75v-VAxUAAAAAHQAAAAAQBA..i&aep=10&cs=1&udm=50&mstk=AUtExfAbI34zETgQ9VuuSbZVpax7hIJ6dwZNo7HZ_pM2qOgHLN4Hi8IYI1EhbhylKyMXL0_QZAvjKXt8nxNLzeaECdBQShctIbWy-jmYYvyM3xakJDluKPyC7ThM3Wq_KRujIDKI0nlksb_e4mHwLa4jyv8AZobrpTK6xTeG4WxyD-CBdiHYHs4csCKEB_kRRiY10yQ5-6_A5GHtC17yxN4EyOXNFqk9XpgYG6dOHFxiXOaesdPJS1BfwB0kjcFGndtWnptSVgLLr_w-Aulbo23LogcndcfNjDOG2btSNyZkJedB8F_8zd_XaCxlRlfuBwia3hxmGy1jtq21rQ&pvq=Cg0vZy8xMWg1cngwMGJ0YmQSYhJgCg1zY2hvb2wgZmFjYWRlCg5zY2hvb2wgbGlicmFyeQoQc2Nob29sIGNvdXJ0eWFyZAoMc3BvcnRzIGNvdXJ0ChFzY2hvb2wgYXVkaXRvcml1bQoMY29tcHV0ZXIgbGFigAEC&fvr=1&um=1&ie=UTF-8&fb=1&gl=br&sa=X&ftid=0x94eadf405331c561:0xc9c9e93e3d6dffb4";
@@ -253,11 +262,14 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
       link.textContent = "📍 Ver no Google Maps";
       grupo.append(link);
     }
+    // Oferece um botão para abrir o catálogo de estudantes.
     if (acao === "openCatalog") {
+      // Ao clicar, leva a pessoa até o carrossel da página de currículos.
       criarOpcao(grupo, "Ver Currículos", () => {
         window.location.href = "vercurriculos.html#carrossel";
       });
     }
+    // Registra a escolha no histórico e mostra novamente os assuntos do menu.
     criarOpcao(grupo, "🔙 Voltar ao menu principal", () => {
       criarMensagem("Voltar ao menu principal", "user");
       mostrarMenu();
@@ -270,7 +282,9 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
   function finalizarConversa() {
     criarMensagem("Finalizar conversa", "user");
     limparOpcoes();
+    // Depois de mostrar a despedida, agenda o fechamento e a limpeza do histórico.
     mostrarMensagem(CONFIG.endMessage, () => {
+      // Aguarda 1,2 segundo para dar tempo de ler a despedida antes de fechar.
       setTimeout(() => {
         fecharChat();
         // Cancela respostas ainda aguardando para não repor mensagens após limpar.
@@ -282,6 +296,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     });
   }
 
+  // Recebe uma mensagem, mostra o texto da pessoa e procura a resposta correspondente.
   function enviarMensagem(texto) {
     if (!texto.trim()) return; // Não envia mensagens vazias ou só com espaços.
     criarMensagem(texto, "user");
@@ -289,6 +304,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     responder(texto);
   }
 
+  // Lê o campo, retira espaços das pontas e limpa a entrada antes de enviar o texto.
   function enviarTextoDigitado() {
     const texto = campoMensagem.value.trim();
     if (!texto) return;
@@ -301,10 +317,13 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
     if (painel.classList.contains("open")) fecharChat();
     else abrirChat();
   });
+  // Envia o texto quando a pessoa clica na seta do campo de mensagem.
   botaoEnviar.addEventListener("click", enviarTextoDigitado);
+  // Envia com Enter, exceto enquanto o teclado ainda está compondo um caractere.
   campoMensagem.addEventListener("keydown", (evento) => {
     if (evento.key === "Enter" && !evento.isComposing) enviarTextoDigitado();
   });
+  // Permite fechar o chat aberto usando a tecla Escape.
   document.addEventListener("keydown", (evento) => {
     if (evento.key === "Escape" && painel.classList.contains("open")) fecharChat();
   });

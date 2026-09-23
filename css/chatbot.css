@@ -5,28 +5,28 @@
   padding: 0;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto, a cor da borda dos elementos selecionados. */
 body.pagina-padrao.dark-mode #cb-panel .cb-quick-replies button {
   background: #fff;
   color: #1B2A3D;
   border-color: #cabf9e;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto, a cor da borda dos elementos selecionados. O seletor :hover vale ao passar o mouse. */
 body.pagina-padrao.dark-mode #cb-panel .cb-quick-replies button:hover {
   background: #043175;
   color: #fff;
   border-color: #043175;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto, a cor da borda dos elementos selecionados. */
 body.pagina-padrao.dark-mode #cb-panel input {
   background: #fff;
   color: #1B2A3D;
   border-color: #cabf9e;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo, a cor do texto dos elementos selecionados. */
 body.pagina-padrao.dark-mode #cb-panel #cb-send {
   background: #16223A;
   color: #fff;
@@ -54,22 +54,22 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   font-family: inherit;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, amplia o elemento. */
 #cb-toggle:hover {
   transform: scale(1.06);
 }
 
-/* Alterna o ícone de conversa e o de fechar conforme o estado do botão. */
+/* Esconde o ícone de fechar enquanto o botão está no estado inicial. */
 #cb-toggle .cb-close-ic {
   display: none;
 }
 
-/* Alterna o ícone de conversa e o de fechar conforme o estado do botão. */
+/* Esconde o ícone de conversa quando o chat está aberto. */
 #cb-toggle.is-open .cb-chat-ic {
   display: none;
 }
 
-/* Alterna o ícone de conversa e o de fechar conforme o estado do botão. */
+/* Mostra o ícone de fechar quando o chat está aberto. */
 #cb-toggle.is-open .cb-close-ic {
   display: block;
 }
@@ -117,7 +117,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   border-bottom: 3px solid #043175;
 }
 
-/* Organiza o nome da assistente e o indicador no topo do chat. */
+/* Desenha a bolinha verde do cabeçalho e impede que ela encolha. */
 .cb-head .cb-dot {
   width: 8px;
   height: 8px;
@@ -126,13 +126,13 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   flex-shrink: 0;
 }
 
-/* Organiza o nome da assistente e o indicador no topo do chat. */
+/* Coloca o nome da assistente em uma linha própria e aumenta sua fonte. */
 .cb-head strong {
   display: block;
   font-size: 0.95rem;
 }
 
-/* Organiza o nome da assistente e o indicador no topo do chat. */
+/* Deixa o subtítulo da assistente mais transparente. */
 .cb-head small {
   opacity: 0.7;
 }
@@ -180,7 +180,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   padding: 12px 14px;
 }
 
-/* Organiza as três bolinhas que indicam que a resposta está sendo preparada. */
+/* Desenha cada bolinha e repete a animação que simula a digitação da assistente. */
 .cb-typing span {
   width: 6px;
   height: 6px;
@@ -202,7 +202,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
 
 /* Alterna a posição e a transparência das bolinhas durante a digitação. */
 @keyframes cb-blink {
-  /* Alterna a posição e a transparência das bolinhas durante a digitação. */
+  /* Deixa as bolinhas mais transparentes e na posição inicial nestes momentos da animação. */
   0%,
   80%,
   100% {
@@ -210,7 +210,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
     transform: translateY(0);
   }
 
-  /* Alterna a posição e a transparência das bolinhas durante a digitação. */
+  /* Levanta as bolinhas em 3 pixels e as deixa totalmente visíveis neste momento da animação. */
   40% {
     opacity: 1;
     transform: translateY(-3px);
@@ -226,7 +226,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   margin-top: 2px;
 }
 
-/* Organiza os botões e links de resposta com o mesmo espaçamento. */
+/* Dá às opções de resposta fundo branco, borda, cantos arredondados e texto alinhado à esquerda. */
 .cb-quick-replies button,
 .cb-quick-replies a {
   text-align: left;
@@ -240,20 +240,20 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   font-family: inherit;
 }
 
-/* Organiza os botões e links de resposta com o mesmo espaçamento. */
+/* Faz o link de resposta ocupar uma linha e retira seu sublinhado. */
 .cb-quick-replies a {
   display: block;
   text-decoration: none;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca o fundo e troca a cor da borda. */
 .cb-quick-replies button:hover,
 .cb-quick-replies a:hover {
   background: #043175;
   border-color: #043175;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, troca a cor do texto. */
 .cb-quick-replies a:hover {
   color: #fff;
 }
@@ -267,7 +267,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   background: #F3ECD9;
 }
 
-/* Alinha o campo de mensagem e o botão de envio na base do chat. */
+/* Faz o campo de mensagem ocupar o espaço livre e arredonda sua borda. */
 .cb-input-row input {
   flex: 1;
   border: 1px solid #cabf9e;
@@ -285,7 +285,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   outline-offset: 2px;
 }
 
-/* Alinha o campo de mensagem e o botão de envio na base do chat. */
+/* Desenha o botão de envio circular e centraliza a seta dentro dele. */
 .cb-input-row button {
   background: #16223A;
   color: #fff;
@@ -304,7 +304,7 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
   transform: none;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, mantém o elemento sem deslocamento e troca o fundo. */
 .cb-input-row button:hover {
   background: #B23A2F;
   transform: none;
@@ -320,13 +320,13 @@ body.pagina-padrao.dark-mode #cb-panel #cb-send {
 
 /* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
 @media (prefers-reduced-motion: reduce) {
-  /* Posiciona e desenha o botão que abre e fecha a conversa. */
+  /* Desliga as transições do painel e do botão quando a pessoa prefere menos movimento. */
   #cb-panel,
   #cb-toggle {
     transition: none !important;
   }
 
-  /* Organiza as três bolinhas que indicam que a resposta está sendo preparada. */
+  /* Deixa as bolinhas paradas e visíveis quando a pessoa prefere menos movimento. */
   .cb-typing span {
     animation: none !important;
     opacity: 0.6;

@@ -25,7 +25,7 @@
   box-sizing: border-box;
 }
 
-/* Define o fundo ou a rolagem do documento inteiro. */
+/* Faz a rolagem do documento acontecer suavemente. */
 html {
   scroll-behavior: smooth;
 }
@@ -40,7 +40,7 @@ body {
   line-height: 1.5;
 }
 
-/* Mantém a transição dos botões ao interagir com eles. */
+/* Faz botões e campos usarem a mesma fonte do elemento que os contém. */
 button,
 input {
   font: inherit;
@@ -63,7 +63,7 @@ a {
   margin-inline: auto;
 }
 
-/* Mantém a apresentação da página de modelos com suas medidas originais. */
+/* Define o espaço acima e abaixo da apresentação. */
 .hero {
   padding: 46px 0 34px;
 }
@@ -80,7 +80,7 @@ a {
   box-shadow: var(--shadow);
 }
 
-/* Mantém o painel de apresentação e sua decoração. */
+/* Cria dois círculos decorativos pelo CSS, sem precisar adicionar elementos ao HTML. */
 .hero-panel::before,
 .hero-panel::after {
   position: absolute;
@@ -89,7 +89,7 @@ a {
   background: rgba(255, 255, 255, 0.07);
 }
 
-/* Mantém o painel de apresentação e sua decoração. */
+/* Define o tamanho e a posição do círculo decorativo superior. */
 .hero-panel::before {
   top: -130px;
   right: -80px;
@@ -97,7 +97,7 @@ a {
   height: 360px;
 }
 
-/* Mantém o painel de apresentação e sua decoração. */
+/* Define o tamanho e a posição do círculo decorativo inferior. */
 .hero-panel::after {
   right: 210px;
   bottom: -180px;
@@ -125,7 +125,7 @@ a {
   text-transform: uppercase;
 }
 
-/* Mantém a pequena identificação acima do título da apresentação. */
+/* Desenha um traço antes da identificação, usando a mesma cor do texto. */
 .eyebrow::before {
   width: 32px;
   height: 2px;
@@ -133,7 +133,7 @@ a {
   background: currentColor;
 }
 
-/* Mantém a apresentação da página de modelos com suas medidas originais. */
+/* Ajusta a fonte do título ao tamanho da tela com clamp(), respeitando um mínimo e um máximo. */
 .hero h1 {
   max-width: 820px;
   margin: 0;
@@ -176,26 +176,26 @@ a {
   transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima. */
 .button:hover {
   transform: translateY(-2px);
 }
 
-/* Mantém o formato e as transições dos botões da página de modelos. */
+/* Destaca o botão principal com fundo branco e sombra externa. */
 .button-primary {
   color: var(--accent);
   background: #ffffff;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
-/* Mantém o formato e as transições dos botões da página de modelos. */
+/* Usa fundo transparente e sombra interna para desenhar a borda do botão secundário. */
 .button-secondary {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.10);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
 
-/* Mantém o formato e as transições dos botões da página de modelos. */
+/* Define o tamanho dos ícones e usa neles a mesma cor do texto do botão. */
 .button svg {
   width: 18px;
   height: 18px;
@@ -231,7 +231,7 @@ a {
   text-transform: uppercase;
 }
 
-/* Alinha a apresentação da seção e os controles do carrossel. */
+/* Define a fonte do título da seção e adapta seu tamanho à largura da tela. */
 .section-heading h2 {
   margin: 0;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
@@ -269,7 +269,7 @@ a {
   transition: transform var(--transition), color var(--transition), border-color var(--transition), background var(--transition);
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima, troca o fundo, troca a cor do texto e troca a cor da borda. */
 .carousel-button:hover:not(:disabled) {
   transform: translateY(-2px);
   border-color: var(--accent);
@@ -283,7 +283,7 @@ a {
   opacity: 0.38;
 }
 
-/* Mantém os controles circulares e seus efeitos de interação. */
+/* Define o tamanho das setas e usa a cor do texto dos controles. */
 .carousel-button svg {
   width: 20px;
   height: 20px;
@@ -318,14 +318,14 @@ a {
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
-/* Organiza o ícone e o campo de busca dos estudantes. */
+/* Destaca a caixa de busca quando o campo dentro dela recebe o foco. */
 .search-box:focus-within {
   border-color: var(--accent);
   background: #ffffff;
   box-shadow: 0 0 0 4px rgba(72, 68, 68, 0.10);
 }
 
-/* Organiza o ícone e o campo de busca dos estudantes. */
+/* Define a cor e o tamanho da lupa e impede que ela encolha. */
 .search-box svg {
   flex: 0 0 auto;
   width: 19px;
@@ -334,7 +334,7 @@ a {
   fill: currentColor;
 }
 
-/* Organiza o ícone e o campo de busca dos estudantes. */
+/* Faz o campo preencher a caixa de busca, sem fundo ou borda próprios. */
 .search-box input {
   width: 100%;
   min-height: 46px;
@@ -344,7 +344,7 @@ a {
   background: transparent;
 }
 
-/* Organiza o ícone e o campo de busca dos estudantes. */
+/* Colore de cinza o exemplo exibido no campo antes da digitação. */
 .search-box input::placeholder {
   color: #8a8a8a;
 }
@@ -377,12 +377,12 @@ a {
   scrollbar-color: var(--accent) transparent;
 }
 
-/* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+/* Define a altura da barra de rolagem nos navegadores que aceitam este seletor. */
 .carousel-track::-webkit-scrollbar {
   height: 8px;
 }
 
-/* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+/* Colore e arredonda a parte móvel da barra de rolagem. */
 .carousel-track::-webkit-scrollbar-thumb {
   border-radius: 999px;
   background: var(--accent);
@@ -409,7 +409,7 @@ a {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para cima, destaca a sombra e troca a cor da borda. */
 .student-link:hover {
   transform: translateY(-7px);
   border-color: #c5c3c0;
@@ -432,7 +432,7 @@ a {
   transition: transform 320ms ease;
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, amplia o elemento. */
 .student-link:hover .student-photo {
   transform: scale(1.045);
 }
@@ -488,7 +488,7 @@ a {
   margin-top: 18px;
 }
 
-/* Organiza a etiqueta com a área do estudante. */
+/* Desenha a área profissional como uma etiqueta pequena com fundo claro. */
 .student-meta span {
   padding: 6px 9px;
   border-radius: 999px;
@@ -511,7 +511,7 @@ a {
   font-weight: 800;
 }
 
-/* Alinha o texto e a seta para abrir o currículo. */
+/* Define o tamanho e a cor da seta e suaviza seu movimento. */
 .student-cta svg {
   width: 19px;
   height: 19px;
@@ -519,7 +519,7 @@ a {
   transition: transform var(--transition);
 }
 
-/* Mantém o efeito original quando o ponteiro passa sobre o elemento. */
+/* Ao passar o mouse, desloca o elemento para a direita. */
 .student-link:hover .student-cta svg {
   transform: translateX(4px);
 }
@@ -540,7 +540,7 @@ a {
   display: block;
 }
 
-/* Mantém o aviso apresentado quando a busca não encontra estudantes. */
+/* Destaca o título do aviso em uma linha própria, acima do restante da mensagem. */
 .message strong {
   display: block;
   margin-bottom: 6px;
@@ -573,7 +573,7 @@ a {
 
 /* Em telas de até 900 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 900px) {
-  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  /* Ajusta a largura dos cartões à tela menor, mantendo a rolagem horizontal. */
   .carousel-track {
     grid-auto-columns: minmax(260px, 46%);
   }
@@ -582,7 +582,7 @@ a {
 
 /* Em telas de até 680 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 680px) {
-  /* Mantém a apresentação da página de modelos com suas medidas originais. */
+  /* Define o espaço acima da apresentação. */
   .hero {
     padding-top: 24px;
   }
@@ -598,12 +598,12 @@ a {
     align-items: start;
   }
 
-  /* Alinha os botões de rolagem do carrossel de modelos. */
+  /* Esconde os botões de avanço em telas pequenas; a lista continua com rolagem horizontal. */
   .carousel-actions {
     display: none;
   }
 
-  /* Alinha a busca e a quantidade de resultados com o fundo original. */
+  /* Coloca os elementos um abaixo do outro e faz com que ocupem a largura disponível. */
   .toolbar {
     align-items: stretch;
     flex-direction: column;
@@ -615,7 +615,7 @@ a {
     white-space: normal;
   }
 
-  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  /* Ajusta a largura dos cartões à tela menor, mantendo a rolagem horizontal. */
   .carousel-track {
     grid-auto-columns: minmax(250px, 86%);
   }
@@ -634,17 +634,17 @@ a {
     padding: 28px 22px;
   }
 
-  /* Mantém a apresentação da página de modelos com suas medidas originais. */
+  /* Ajusta a fonte do título ao tamanho da tela com clamp(), respeitando um mínimo e um máximo. */
   .hero h1 {
     font-size: clamp(2.15rem, 15vw, 3.4rem);
   }
 
-  /* Mantém o formato e as transições dos botões da página de modelos. */
+  /* Faz os botões ocuparem toda a largura disponível em telas pequenas. */
   .button {
     width: 100%;
   }
 
-  /* Mantém a rolagem horizontal e a largura dos cards da página de modelos. */
+  /* Ajusta a largura dos cartões à tela menor, mantendo a rolagem horizontal. */
   .carousel-track {
     grid-auto-columns: 92%;
     gap: 14px;
@@ -659,7 +659,7 @@ a {
 
 /* Reduz os movimentos quando essa preferência está ativada no dispositivo. */
 @media (prefers-reduced-motion: reduce) {
-  /* Inclui bordas e preenchimentos no tamanho calculado dos elementos. */
+  /* Retira a rolagem suave e reduz a duração dos efeitos para quem prefere menos movimento. */
   *,
   *::before,
   *::after {

@@ -16,14 +16,14 @@
   gap: 20px;
 }
 
-/* Aplica as cores ou a posição original dos elementos quando o modo escuro está ativo. */
+/* No modo escuro, ajusta o fundo dos elementos selecionados. */
 body.dark-mode .certificados {
   background: #111827;
 }
 
 /* Em telas de até 760 pixels, adapta a disposição sem mudar o conteúdo. */
 @media (max-width: 760px) {
-  /* Mantém a faixa de cursos com as cores e o alinhamento originais. */
+  /* Coloca os elementos um abaixo do outro e faz com que ocupem a largura disponível. */
   .vagas,
   .certificados {
     align-items: stretch;

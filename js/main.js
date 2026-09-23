@@ -11,6 +11,7 @@ function setTheme(isDark) {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
+// Só configura a troca de tema se o botão existir nesta página.
 if (themeToggle) {
   // A escolha salva tem prioridade sobre o tema configurado no dispositivo.
   const savedTheme = localStorage.getItem('theme');
